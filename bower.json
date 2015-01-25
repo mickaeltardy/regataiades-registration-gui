@@ -1,0 +1,21 @@
+{
+  "name": "regataiades-gui",
+  "version": "0.0.1",
+  "description": "Web interface to the Java application",
+  "authors": [
+    "Mickael Tardy mishgunn [at] gmail.com"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests", 
+    "inc"
+  ],
+  "dependencies":{
+  	"angular":"1.4.0-beta.1",
+  	"jquery":"~2.1.3",
+  	"bootstrap":"3.3.2"
+  }
+}

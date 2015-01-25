@@ -1,0 +1,25 @@
+<fieldset id="contactPersonFs">
+	<legend>{{regCtrl.messages.labels.contactPerson}}</legend>
+	<ol>
+		<li><label for="email">{{regCtrl.messages.labels.email}}</label>
+			<input id="email" type="email" name="data[contact][email]"
+			placeholder="your@email.com" required="required"
+			data-ng-model="regCtrl.registration.contact.email" /></li>
+		<li><label for="email">{{regCtrl.messages.labels.password}}</label>
+			<input id="password" type="password" name="data[contact][password]"
+			placeholder="{{regCtrl.messages.labels.password}}" required="required"
+			data-ng-model="regCtrl.registration.contact.password" /></li>
+		<li><label for="name">{{regCtrl.messages.labels.name}}</label> <input
+			id="name" type="text" name="data[contact][name]" required="required"
+			data-ng-model="regCtrl.registration.contact.name" /></li>
+		<li><label for="surname">{{regCtrl.messages.labels.surname}}</label>
+			<input id="surname" type="text" name="data[contact][surname]"
+			required="required"
+			data-ng-model="regCtrl.registration.contact.surname" /></li>
+		<li><label for="tel_number">{{regCtrl.messages.labels.telNumber}}
+		</label> <input id="tel_number" type="text" name="data[contact][tel]"
+			placeholder="+(XX)XXXXXXX" required="required"
+			data-ng-model="regCtrl.registration.contact.telNumber" /></li>
+
+	</ol>
+</fieldset>

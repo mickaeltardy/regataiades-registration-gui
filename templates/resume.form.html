@@ -1,0 +1,14 @@
+
+<fieldset id="priceFs">
+	<legend> {{regCtrl.messages.labels.price}} </legend>
+	<p id="priceInfo"></p>
+	<ol>
+		<li><label for="total_price">{{regCtrl.messages.labels.totalPrice}}</label>
+			{{getTotalPrice()}}</li>
+	</ol>
+</fieldset>
+<fieldset id="complementaryFs">
+	<legend> {{regCtrl.messages.labels.complementary}} </legend>
+	<textarea id="complementary_text" name="data[complementary]"
+		data-ng-model="registration.details"></textarea>
+</fieldset>

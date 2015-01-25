@@ -1,0 +1,92 @@
+{   
+    "title" : "Pre-registration form",
+    "labels" : {
+        "clubName" : "Team Name",
+        "clubAddress" : "Address",
+        "clubCountry" : "Country",
+        "clubCity" : "City",
+        "email" : "Email",
+        "password" : "Password",
+        "telNumber" : "Telephone No",
+        "crews" : "Crews",
+        "coaches" : "Coaches",
+        "arrivalDate" : "Arrival Date",
+        "arrivalTime" : "Arrival Time",
+        "arrivalTransport" : "Arrival Transport",
+        "twinNumber" : "Twin rooms number",
+        "tripleNumber" : "Triple rooms number",
+        "hostingParty" : "Dinner of honnour ",
+        "totalPrice" : "Overall price",
+        "clubIdentity" : "Team identity",
+        "contactPerson" : "Contact person",
+        "arrival" : "Arrival",
+        "accomodation" : "Accomodation",
+        "complementary" : "Complementary",
+        "hosting" : "Meals",
+        "price" : "Pricing",
+        "delete" : "Delete",
+        "category" : "Category",
+        "crewCaptain" : "Crew Captain",
+        "place" : "Place", 
+        "name" : "Name", 
+        "surname" : "Surname",
+        "sex" : "Sex", 
+        "licenceNo" : "Licence No",
+        "tshirtSize" : "T-shirt size",
+        
+        "runs" : "Runs",
+        "runsBothDays" : "Saturday and Sunday",
+        "runsOnlySaturday" : "Only Saturday",
+        "runsOnlySunday " : "Only Sunday",
+        "boat" : "Boat",
+        "boatRequired" : "Required",
+        "canBeLoaned" : "Can be loaned",
+        "previousStep" : "Previous step",
+        "nextStep" : "Next step", 
+        "requiredFields" : "Required fields", 
+        "sexes" : {"f" : "F", "m" : "M"},
+        "places" : {"9" :  [ "Bow", "2", "3", "4", "5", "6", "7", "Stroke", "Cox" ], "4" : ["Bow", "2", "3", "Stroke"]},
+        "transport" : ["car", "bus", "train", "plane"]
+        
+    },
+    "values" : {
+        "addCrew" : "Add a crew",
+        "addCoach" : "Add a coach",
+        "submit" : "Submit",
+        "partyNone" : "None",
+        "partyOne" : "One person",
+        "partyTwo" : "Two people"
+    },
+    "alerts" : {
+        "pleaseFillIn" : "Please fill in required values",
+        "invalidValues" : "Some values are not valid"
+    },
+    "messages" : {
+    	"switchLanguage" : "Chqnger la langue : ",
+        "needToSpecifyACrew" : "Need to specify at least one crew",
+        "needToSpecifyACaptain" : "A captain shall be specified for each crew",
+        "warningMembersCnt" : "Attention : it seem like some of the athletes are engaged in several crews. This is not accepted by the regatta rules.",
+        "formValidated" : "The form is successfully submitted. Please check your mailbox for further instructions."
+        
+    },
+    "errors" : {
+        "invalidForm" : "The form is not filled in correctly. Please check it out and then submit again."
+    },
+    "boats" : {
+        "W4x" : {"label" : "W4x", "key" : "W4x"},
+        "M4x" : {"label" : "M4x", "key" : "M4x"},
+        "W8+" : {"label" : "W8+", "key" : "W8+"},
+        "M8+" : {"label" : "M8+", "key" : "M8+"}
+    },
+    "pdf" : {
+        "title" : "Régataiades Internationales de Nantes 2015",
+        "subtitle" : "31th edition: 09 & 10 May 2015",
+        "details" : "After checking the information in this document, please contact us for the finalisation of your registration.",
+        "signature" : "Signature",
+        "date" : "Date" 
+    }, 
+    "mail" : {
+        "registration" : {"title" : "[Regataiades] Online pre-registration form successfully submitted"}
+    }
+    
+}

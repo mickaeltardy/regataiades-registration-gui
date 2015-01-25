@@ -1,0 +1,60 @@
+<fieldset id="crewsFs">
+	<legend> {{regCtrl.messages.labels.crews}} </legend>
+	<span class="button" name="add_crew" id="add_crew"
+		data-ng-click="addCrew()">{{regCtrl.messages.values.addCrew}}</span>
+
+	<div id="crews">
+		<div data-ng-repeat="crew in registration.crews" class="crew"
+			id="crew_{{crew.id}}">
+			<span class="button" data-ng-click="removeCrew($index)">{{regCtrl.messages.labels.delete}}</span>
+			<ol>
+				<li><label for="crew_{{crew.id}}_type">{{regCtrl.messages.labels.category}}</label>
+					<select data-ng-model="crew.type"
+					data-ng-change="changeCrewType(crew)" id="crew_{{crew.id}}_type">
+						<option value="">---</option>
+						<option data-ng-repeat="boat in boats" value="{{boat}}">{{regCtrl.messages.boats[boat].label}}</option>
+				</select></li>
+				<li data-ng-show="crew.members && crew.members.length > 0">
+					<table>
+						<thead>
+							<tr>
+								<th>{{regCtrl.messages.labels.crewCaptain}}</th>
+								<th>{{regCtrl.messages.labels.place}}</th>
+								<th>{{regCtrl.messages.labels.name}}</th>
+								<th>{{regCtrl.messages.labels.surname}}</th>
+								<th>{{regCtrl.messages.labels.licenceNo}}</th>
+								<th>{{regCtrl.messages.labels.sex}}</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr data-ng-repeat="member in crew.members" class="memberItem">
+								<td><input type="radio"
+									name="data[crew][{{crew.id}}][capatain]"
+									data-ng-model="crew.captain" value="{{$index}}" /></td>
+								<td>{{getPlaceLabel(crew, $index)}}</td>
+								<td><input type="text" data-ng-model="member.name"
+									placeholder="{{regCtrl.messages.labels.name}}" /></td>
+								<td><input type="text" data-ng-model="member.surname"
+									placeholder="{{regCtrl.messages.labels.surname}}" /></td>
+								<td><input type="text" data-ng-model="member.licence"
+									placeholder="{{regCtrl.messages.labels.licencePlaceholder}}" /></td>
+								<td><input id="crew_{{crew.id}}_member_{{$index+1}}_sex_m"
+									name="data[crews][{{crew.id}}][members][{{$index+1}}][sex]"
+									data-ng-model="member.sex" type="radio" value="M" /> <label
+									for="crew_{{crew.id}}_member_{{$index+1}}_sex_m">{{regCtrl.messages.labels.sexes.m}}</label>
+									<input id="crew_{{crew.id}}_member_{{$index+1}}_sex_f"
+									name="data[crews][{{crew.id}}][members][{{$index+1}}][sex]"
+									data-ng-model="member.sex" type="radio" value="F" /> <label
+									for="crew_{{crew.id}}_member_{{$index+1}}_sex_f">{{regCtrl.messages.labels.sexes.f}}</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</li>
+			</ol>
+		</div>
+	</div>
+
+
+</fieldset>
