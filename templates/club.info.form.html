@@ -1,22 +1,22 @@
 <fieldset id="clubIdentityFs">
 	<legend> {{regCtrl.messages.labels.clubIdentity}} </legend>
 	<ol>
-		<li><label for="club_name">{{regCtrl.messages.labels.clubName}}</label> <input
-			id="club_name" type="text" name="data[team][name]"
-			required="required" data-ng-model="registration.club.name" /></li>
+		<li><label class="required" for="club_name">{{regCtrl.messages.labels.clubName}}</label>
+			<input id="club_name" type="text" name="data[team][name]"
+			required="required" data-ng-model="regCtrl.registration.club.name" /></li>
 		<li><label for="club_tel_number">{{regCtrl.messages.labels.telNumber}}</label>
 			<input id="club_tel_number" type="text" name="data[team][tel]"
-			placeholder="+(XX)XXXXXXX" required="required"
-			data-ng-model="registration.club.telNumber" /></li>
-		<li><label for="club_address">{{regCtrl.messages.labels.clubAddress}}</label>
+			placeholder="+(XX)XXXXXXX"
+			data-ng-model="regCtrl.registration.club.telNumber" /></li>
+		<li><label class="required" for="club_address">{{regCtrl.messages.labels.clubAddress}}</label>
 			<input id="club_address" type="text" name="data[team][address]"
-			required="required" data-ng-model="registration.club.address" /></li>
-		<li><label for="club_city">{{regCtrl.messages.labels.clubCity}}</label> <input
-			id="club_city" type="text" name="data[team][city]"
-			required="required" data-ng-model="registration.club.city" /></li>
-		<li><label for="club_country">{{regCtrl.messages.labels.clubCountry}}</label>
+			required="required" data-ng-model="regCtrl.registration.club.address" /></li>
+		<li><label class="required" for="club_city">{{regCtrl.messages.labels.clubCity}}</label>
+			<input id="club_city" type="text" name="data[team][city]"
+			required="required" data-ng-model="regCtrl.registration.club.city" /></li>
+		<li><label class="required" for="club_country">{{regCtrl.messages.labels.clubCountry}}</label>
 			<input id="club_country" type="text" name="data[team][country]"
-			required="required" data-ng-model="registration.club.country" /></li>
+			required="required" data-ng-model="regCtrl.registration.club.country" /></li>
 
 	</ol>
 </fieldset>

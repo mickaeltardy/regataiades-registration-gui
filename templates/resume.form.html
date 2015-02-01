@@ -1,10 +1,10 @@
 
-<fieldset id="priceFs">
+<fieldset id="priceFs" data-ng-hide="regCtrl.invitation">
 	<legend> {{regCtrl.messages.labels.price}} </legend>
 	<p id="priceInfo"></p>
 	<ol>
 		<li><label for="total_price">{{regCtrl.messages.labels.totalPrice}}</label>
-			{{getTotalPrice()}}</li>
+			{{regCtrl.getTotalPrice()}}</li>
 	</ol>
 </fieldset>
 <fieldset id="complementaryFs">
@@ -12,3 +12,6 @@
 	<textarea id="complementary_text" name="data[complementary]"
 		data-ng-model="registration.details"></textarea>
 </fieldset>
+
+<input type="submit" value="{{regCtrl.messages.values.submit}}">
+

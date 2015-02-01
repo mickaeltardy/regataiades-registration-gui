@@ -1,0 +1,8 @@
+@mixin formAlert ($borderColor, $bgColor ){
+	border-color: $borderColor;
+	background: $bgColor;
+}
+
+@mixin notificationsStyle ($bgColor) {
+	background: $bgColor;
+}

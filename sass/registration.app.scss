@@ -1,10 +1,184 @@
-input.ng-invalid.ng-dirty,
-input.ng-invalid.ng-touched {
-	border-color: #FF4000;
-	background: #F6D8CE;
+@import 'registration.confs';
+
+@import 'registration.mixins';
+
+div[data-ng-controller="RegistrationController as regCtrl"] {
+	font-family: $fontFamily;
 }
 
-input.ng-valid.ng-dirty {
-	border-color: #3ADF00;
-	background: #D8F6CE
+input[type=submit], .button {
+	border: $borderStyle;
+	background: #eeeeee;
+	margin: $smallPadding;
+	padding: $smallPadding;
+	display: block;
+	width: auto;
+	float: left;
+	clear: both;
+}
+
+input[type=submit] {
+	font-weight: bold;
+	font-size: 120%;
+	float: none;
+}
+
+ol {
+	clear: both;
+}
+ol li{
+	margin-top:10px;
+}
+
+#total_price {
+	border: 0px;
+	font-weight: bold;
+}
+
+.title, #registrationForm {
+	font-family: $fontFamily;
+}
+
+.title {
+	font-size: 230%;
+	color: #3D9FD0;
+}
+
+.title span {
+	color: #000000;
+}
+
+fieldset {
+	padding: 10px;
+	margin: 10px;
+	border: $borderStyle;
+	clear: both;
+}
+
+.item-page {
+	display: none;
+}
+
+div.language {
+	margin: $smallPadding;
+	padding: $smallPadding;
+	background: #999999;
+	color: #000000;
+	float: left;
+	display: inline;
+	font-weight: bold;
+}
+
+div.language.selected {
+	background: #3D9FD0;
+}
+
+div.form, div.selectLanguage {
+	clear: both;
+	width: 100%;
+	display: block;
+	float: none;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	overflow: auto;
+}
+
+input[type=text], input[type=date], input[type=email], input[type=password],
+	textarea {
+	padding: $smallPadding;
+	margin-top: $smallPadding;
+	margin-bottom: $smallPadding;
+	width: 100%;
+	border: 0px;
+	border-bottom: $borderStyle;
+	padding: $smallPadding;
+	font-size: 90%;
+	font-style: italic;
+}
+
+input.ng-invalid.ng-dirty[required], input.ng-invalid.ng-touched[required]
+	{ @include formAlert(#FF4000, rgba(246, 216, 206, 0.2));
+	
+}
+
+input.ng-valid.ng-dirty[required] { @include formAlert(#3ADF00,
+	rgba(216, 246, 206, 0.2));
+	
+}
+
+div.dropboxContainer {
+	padding: 0;
+	margin: 5px;
+	border: 1px solid #ccc;
+	width: 120px;
+	border-radius: 3px;
+	overflow: hidden;
+	background-color: #fff;
+	display: inline;
+	float: left;
+	background: #fff url("../shared/img/arrowdown.gif") no-repeat 90% 50%;
+}
+
+div.dropboxContainer select {
+	padding: 5px 8px;
+	width: 130%;
+	border: none;
+	box-shadow: none;
+	background-color: transparent;
+	background-image: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+div.dropboxContainer select:focus {
+	outline: none;
+}
+
+table tr td,
+table tr th {
+	padding:$smallPadding;
+}
+div.coachCreator,
+div.crewCreator {
+	overflow: auto;
+	clear: both;
+}
+div.coachCreator div,
+div.crewCreator div{
+	float:left;
+}
+div.crewCreator div.crewLabel,
+div.coachCreator div.coachLabel,
+div.crewCreator div.catLabel{
+	margin:10px;
+	font-size: 105%;
+	font-weight: bold;
+}
+
+
+ul.notifications>li{
+	padding:10px;
+	margin:10px;
+	
+}
+ul.notifications>li.warning {
+	@include notificationsStyle(#FF9000)
+}
+
+ul.notifications>li.error {
+	@include notificationsStyle(#FF0000)
+}
+
+
+div.info {
+	color:#999999;
+	padding:10px;
+	margin:10px;
+	border-left: thin solid #999999;
+}
+label.required:after{
+	content: "*";
+	color: #ff0000;
+	
 }

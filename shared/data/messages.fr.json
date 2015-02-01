@@ -9,7 +9,9 @@
         "password" : "Mot de passe",
         "telNumber" : "Numéro de téléphone",
         "crews" : "Equipages",
+        "crew" : "Equipage",
         "coaches" : "Accompagnateurs",
+        "coach" : "Accompagnateur",
         "arrivalDate" : "Date d'arrivée",
         "arrivalTime" : "Heure d'arrivée",
         "arrivalTransport" : "Moyen de transport",
@@ -29,7 +31,7 @@
         "delete" : "Supprimer",
         "category" : "Catégorie",
         "crewCaptain" : "Capitaine",
-        "place" : "Emplacement", 
+        "place" : "Empl.", 
         "name" : "Prénom", 
         "surname" : "Nom",
         "sex" : "Sexe", 
@@ -71,6 +73,8 @@
     "messages" : {
     	"switchLanguage" : "Change the language:",
         "needToSpecifyACrew" : "Au moins un équipage doit être inscrit",
+        "willNeedToSpecifyAthletesDetails" : "N'oubliez pas de fournir toutes les informations sur les athletes avant J-0",
+        "requiredFieldsInvalid" : "Certains champs obligatoires  ne sont pas correctement renseignés", 
         "needToSpecifyACaptain" : "Un capitaine d'équipage doit être indiqué",
         "warningMembersCnt" : "Attention : certains rameurs apparaissent dans plusieurs équipages. Cela n'est pas autorisé par la réglementation.",
         "formValidated" : "Le formulaire est validé avec succès. Veuillez vérifiez votre boîte mail pour plus d'instructions."
@@ -93,5 +97,10 @@
     }, 
     "mail" : {
         "registration" : {"title" : "[Regataiades] Formulaire de préinscription rempli"}
-    }
+    }, 
+    "info" : {
+    	"formDetails" : "Le formulaire de pré-inscription vous permet d'inscrire votre délégation aux Régataïades.",
+    	"coachesDetails" : "Vous pouvez indiquer les etraineurs et les accompagnateurs qui font partie de la délégation. Ceci n'est pas obligatoire.",
+    	"crewsDetails" : "Vous n'êtes pas obligés de renseigner toutes les informations sur les rameurs pour inscrire un équipage, mais elles devront être fournies avant le jour de l'évenement."
+	}
 }
