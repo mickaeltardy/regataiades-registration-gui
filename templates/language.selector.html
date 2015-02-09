@@ -1,11 +1,11 @@
 
 <div class="selectLanguage">
 	<div>{{regCtrl.messages.messages.switchLanguage}}</div>
-	<div
-		data-ng-class="{'language': true, 'selected':regCtrl.lang == 'en'}"
-		data-ng-click="regCtrl.switchLanguage('en')">EN</div>
+	<button class="btn"
+		data-ng-class="{'btn-default':regCtrl.lang != 'en', 'btn-info':regCtrl.lang == 'en'}"
+		data-ng-click="regCtrl.switchLanguage('en')">EN</button>
 
-	<div
-		data-ng-class="{'language': true, 'selected':regCtrl.lang == 'fr'}"
-		data-ng-click="regCtrl.switchLanguage('fr')">FR</div>
+	<button class="btn"
+		data-ng-class="{'btn-default':regCtrl.lang != 'fr','btn-info':regCtrl.lang == 'fr'}"
+		data-ng-click="regCtrl.switchLanguage('fr')">FR</button>
 </div>

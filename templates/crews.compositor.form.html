@@ -1,11 +1,11 @@
 <fieldset id="crewsFs">
 	<legend> {{regCtrl.messages.labels.crews}} </legend>
 	<div class="info">{{regCtrl.messages.info.crewsDetails}}</div>
-	<span class="button" id="add_crew"
+	<span class="btn btn-primary" id="add_crew"
 		data-ng-click="regCtrl.addCrew()">{{regCtrl.messages.values.addCrew}}</span>
 
 	<div id="crews">
-		<div data-ng-repeat="crew in regCtrl.registration.crews" class="crew"
+		<div data-ng-repeat="crew in regCtrl.registration.team.crews" class="crew"
 			id="crew_{{crew.id}}">
 			<ol>
 				<li>
@@ -25,11 +25,11 @@
 							</select>
 						</div>
 						<div class="crewDeleteBtn">
-							<span class="button" data-ng-click="regCtrl.removeCrew($index)">{{regCtrl.messages.labels.delete}}</span>
+							<span class="btn btn-warning" data-ng-click="regCtrl.removeCrew($index)">{{regCtrl.messages.labels.delete}}</span>
 						</div>
 					</div>
 				</li>
-				<li data-ng-show="crew.members && crew.members.length > 0">
+				<li data-ng-show="crew.athletes && crew.athletes.length > 0">
 					<table>
 						<thead>
 							<tr>
@@ -42,7 +42,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr data-ng-repeat="member in crew.members" class="memberItem">
+							<tr data-ng-repeat="member in crew.athletes" class="memberItem">
 								<td>{{regCtrl.getPlaceLabel(crew, $index)}}</td>
 								<td><input type="text" data-ng-model="member.name"
 									placeholder="{{regCtrl.messages.labels.name}}" /></td>

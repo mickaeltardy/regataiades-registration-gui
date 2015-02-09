@@ -2,11 +2,51 @@
 
 @import 'registration.mixins';
 
-div[data-ng-controller="RegistrationController as regCtrl"] {
+@import url(//fonts.googleapis.com/css?family=Lato:700);
+
+body {
 	font-family: $fontFamily;
 }
 
-input[type=submit], .button {
+div.welcome, div.registrator {
+	width: 90%;
+	margin: 0px auto 20px;
+}
+
+div.welcome {
+	text-align: center;
+	padding-bottom: 10px;
+	border-bottom: $borderStyle;
+}
+
+h1 {
+	font-size: 32px;
+	margin: 16px 0 0 0;
+	color: #000;
+}
+
+h2 {
+	color: #189FDB;
+}
+
+div[data-ng-controller="RegistrationController as regCtrl"] {
+	
+}
+
+legend {
+	display: block;
+	width: auto;
+	margin-bottom: none;
+	font-size: 100%;
+	color: #000000;
+	border: none;
+}
+
+input[type=submit] {
+	margin: 0px auto;
+}
+
+.button {
 	border: $borderStyle;
 	background: #eeeeee;
 	margin: $smallPadding;
@@ -26,8 +66,9 @@ input[type=submit] {
 ol {
 	clear: both;
 }
-ol li{
-	margin-top:10px;
+
+ol li {
+	margin-top: 10px;
 }
 
 #total_price {
@@ -101,14 +142,13 @@ input.ng-invalid.ng-dirty[required], input.ng-invalid.ng-touched[required]
 	
 }
 
-input.ng-valid.ng-dirty[required] { @include formAlert(#3ADF00,
-	rgba(216, 246, 206, 0.2));
+input.ng-valid.ng-dirty[required] { @include formAlert(#3ADF00, none);
 	
 }
 
 div.dropboxContainer {
 	padding: 0;
-	margin: 5px;
+	margin: 0px 10px;
 	border: 1px solid #ccc;
 	width: 120px;
 	border-radius: 3px;
@@ -135,50 +175,50 @@ div.dropboxContainer select:focus {
 	outline: none;
 }
 
-table tr td,
-table tr th {
-	padding:$smallPadding;
+table tr td, table tr th {
+	padding: $smallPadding;
 }
-div.coachCreator,
-div.crewCreator {
+
+div.coachCreator, div.crewCreator {
 	overflow: auto;
 	clear: both;
+	padding-top:5px;
 }
-div.coachCreator div,
-div.crewCreator div{
-	float:left;
+
+div.coachCreator div, div.crewCreator div {
+	float: left;
 }
-div.crewCreator div.crewLabel,
-div.coachCreator div.coachLabel,
-div.crewCreator div.catLabel{
-	margin:10px;
+
+div.crewCreator div.crewLabel, div.coachCreator div.coachLabel, div.crewCreator div.catLabel
+	{
+	margin: 5px;
 	font-size: 105%;
 	font-weight: bold;
 }
 
+ul.notifications>li {
+	padding: 10px;
+	margin: 10px;
+}
 
-ul.notifications>li{
-	padding:10px;
-	margin:10px;
+ul.notifications>li.warning { @include notificationsStyle(rgba(255, 144,
+	0, 0.1))
 	
 }
-ul.notifications>li.warning {
-	@include notificationsStyle(#FF9000)
-}
 
-ul.notifications>li.error {
-	@include notificationsStyle(#FF0000)
+ul.notifications>li.error { @include notificationsStyle(rgba(255, 0, 0,
+	0.1))
+	
 }
-
 
 div.info {
-	color:#999999;
-	padding:10px;
-	margin:10px;
+	color: #999999;
+	padding: 10px;
+	margin: 10px;
 	border-left: thin solid #999999;
 }
-label.required:after{
+
+label.required:after {
 	content: "*";
 	color: #ff0000;
-	
 }

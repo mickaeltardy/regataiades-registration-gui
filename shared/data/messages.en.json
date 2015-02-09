@@ -7,7 +7,9 @@
         "clubCity" : "City",
         "email" : "Email",
         "password" : "Password",
+        "passwordConfirmation" : "Password confirmation",
         "telNumber" : "Telephone No",
+        "zipCode" : "Zip code",
         "crews" : "Crews",
         "crew" : "Crew",
         "coaches" : "Coaches",
@@ -70,8 +72,8 @@
         "requiredFieldsInvalid" : "Some of the required fields are invalid",
         "needToSpecifyACaptain" : "A captain shall be specified for each crew",
         "warningMembersCnt" : "Attention : it seem like some of the athletes are engaged in several crews. This is not accepted by the regatta rules.",
-        "formValidated" : "The form is successfully submitted. Please check your mailbox for further instructions."
-        
+        "formValidated" : "The form is successfully submitted. Please check your mailbox for further instructions.",
+        "passwordsInequal" : "Passwords are not the same"
     },
     "errors" : {
         "invalidForm" : "The form is not filled in correctly. Please check it out and then submit again."

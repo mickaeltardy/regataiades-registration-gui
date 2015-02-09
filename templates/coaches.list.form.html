@@ -1,16 +1,16 @@
 <fieldset id="coachFs">
 	<legend> {{regCtrl.messages.labels.coaches}} </legend>
 	<div class="info">{{regCtrl.messages.info.coachesDetails}}</div>
-	<span class="button" name="add_coach" id="add_coach"
+	<span class="btn btn-primary" name="add_coach" id="add_coach"
 		data-ng-click="regCtrl.addCoach()">{{regCtrl.messages.values.addCoach}}</span>
 	<div id="coaches">
-		<div data-ng-repeat="coach in regCtrl.registration.coaches"
+		<div data-ng-repeat="coach in regCtrl.registration.team.coaches"
 			id="coach_{{coach.id}}" class="coach">
 			<div class="coachCreator">
 				<div class="coachLabel">{{regCtrl.messages.labels.coach}}
 					N{{$index+1}}</div>
 				<div class="coachDeleteBtn">
-					<span id="coach_{{coach.id}}_delete" class="button"
+					<span id="coach_{{coach.id}}_delete" class="btn btn-warning"
 						data-ng-click="regCtrl.removeCoach($index)">{{regCtrl.messages.labels.delete}}</span>
 				</div>
 			</div>

@@ -4,44 +4,41 @@ var RegistrationCtrl = function($scope, $http) {
 	this.messagesStore = new Object();
 
 	this.addCrew = function() {
-		if (!this.registration.crews)
-			this.registration.crews = new Array();
+		if (!this.registration.team.crews)
+			this.registration.team.crews = new Array();
 		var lCrew = new Object();
-		lCrew.id = this.getRandomId();
 
-		this.registration.crews.push(lCrew);
+		this.registration.team.crews.push(lCrew);
 	}
 
 	this.removeCrew = function(pId) {
-		if (this.registration.crews && pId >= 0) {
-			this.registration.crews.splice(pId, 1);
+		if (this.registration.team.crews && pId >= 0) {
+			this.registration.team.crews.splice(pId, 1);
 		}
 	}
 
 	this.addCoach = function() {
-		if (!this.registration.coaches)
-			this.registration.coaches = new Array();
+		if (!this.registration.team.coaches)
+			this.registration.team.coaches = new Array();
 		var lCoach = new Object();
-		lCoach.id = this.getRandomId();
 
-		this.registration.coaches.push(lCoach);
+		this.registration.team.coaches.push(lCoach);
 	}
 
 	this.removeCoach = function(pId) {
-		if (this.registration.coaches && pId >= 0) {
-			this.registration.coaches.splice(pId, 1);
+		if (this.registration.team.coaches && pId >= 0) {
+			this.registration.team.coaches.splice(pId, 1);
 		}
 	}
 
 	this.changeCrewType = function(pCrew) {
 		if (pCrew) {
-			pCrew.members = new Array();
+			pCrew.athletes = new Array();
 			for (var i = 0; i < this.getMembersCount(pCrew.type); i++) {
 				var lMember = new Object();
 				lMember.sex = this.getMembersSex(pCrew.type);
-				pCrew.members.push(lMember)
+				pCrew.athletes.push(lMember)
 			}
-			pCrew.captain = this.getMembersCount(pCrew.type) - 1;
 
 		}
 	}
@@ -72,7 +69,7 @@ var RegistrationCtrl = function($scope, $http) {
 	};
 
 	this.getAthletesCount = function() {
-		var lCrews = this.registration.crews;
+		var lCrews = this.registration.team.crews;
 
 		var lMembersCnt = 0;
 
@@ -82,7 +79,7 @@ var RegistrationCtrl = function($scope, $http) {
 				if (!lCrews[i].type) {
 					continue;
 				}
-				lMembersCnt += lCrews[i].members.length;
+				lMembersCnt += lCrews[i].athletes.length;
 
 			}
 		}
@@ -91,7 +88,7 @@ var RegistrationCtrl = function($scope, $http) {
 
 	this.getTotalPrice = function() {
 		var lAthletesCnt = 0;
-		if (this.registration.crews) {
+		if (this.registration.team && this.registration.team.crews) {
 			lAthletesCnt = this.getAthletesCount();
 
 		}
@@ -159,7 +156,7 @@ var RegistrationCtrl = function($scope, $http) {
 	this.validateCrews = function() {
 		var lResult = true;
 		var lAthletes = true;
-		var lCrews = this.registration.crews;
+		var lCrews = this.registration.team.crews;
 
 		if (lCrews && lCrews.length > 0) {
 
@@ -169,11 +166,8 @@ var RegistrationCtrl = function($scope, $http) {
 					continue;
 				}
 
-				if (!lCrews[i].captain)
-					lResult = false;
-
-				for (var j = 0; j < lCrews[i].members.length; j++) {
-					var lMember = lCrews[i].members[j];
+				for (var j = 0; j < lCrews[i].athletes.length; j++) {
+					var lMember = lCrews[i].athletes[j];
 
 					if (!this.validateAthlete(lMember))
 						lAthletes = false;
@@ -217,23 +211,34 @@ var RegistrationCtrl = function($scope, $http) {
 		})
 		if (lInvalidFields.length > 0) {
 			lResult = false;
+			this
+					.addErrorNotification(this.messages.messages.requiredFieldsInvalid);
 		}
-		
-		this.addErrorNotification(this.messages.messages.requiredFieldsInvalid)
 
 		return lResult;
+	};
+
+	this.validateUser = function() {
+		var lData = this.registration;
+
+		if (lData && lData.password && lData.passwordConfirmation
+				&& !(lData.password == lData.passwordConfirmation)) {
+			this.addErrorNotification(this.messages.messages.passwordsInequal);
+		}
+
 	}
 
 	this.validateForm = function(pValidForm) {
 
 		this.notifications = new Array();
-		
+
 		var lResult = true;
+		var lValidData = this.validateUser();
 		var lValidData = this.validateData();
 		var lValidCrews = this.validateCrews()
 		var lValidCoaches = this.validateCoaches()
 		lResult = (pValidForm && lValidData && lValidCrews && lValidCoaches);
-		if(!lResult)
+		if (!lResult)
 			$('html,body').scrollTop(0);
 		return lResult;
 
@@ -246,28 +251,35 @@ var RegistrationCtrl = function($scope, $http) {
 		var lMessage = ""
 		var lErrors = new Array();
 		var app = this;
-		if (!this.validateForm()) {
-			lResult = false;
-			this.addErrorNotification(this.messages.errors.invalidForm);
-			this.errors = lErrors;
-		} else {
-			this.errors = new Array();
-			this.validatingForm = true;
 
-			$http({
-				method : 'POST',
-				url : config.registerTeamUrl,
-				data : app.registration
-			}).success(function(data, status) {
-				if (data == "OK") {
-					app.completeForm = true;
-					app.inProgress = false;
-					$('html,body').scrollTop(0);
-				} else
-					alert(app.messages.errors.serverError);
-				app.validatingForm = false;
-			});
+		this.errors = new Array();
+		this.validatingForm = true;
+
+		/*
+		 * Tweaking objects before submit
+		 */
+		if (app.registration && app.registration.team && app.registration.user
+				&& app.registration.user.email) {
+			app.registration.team.email = app.registration.user.email;
+			app.registration.team.invited = app.invitation;
+
 		}
+
+		$http({
+			method : 'POST',
+			url : config.registerTeamUrl + "?lang=" + app.lang,
+			data : app.registration,
+			dataType : 'jsonp'
+		}).success(function(data, status) {
+			if (data == "OK") {
+				app.completeForm = true;
+				app.inProgress = false;
+				$('html,body').scrollTop(0);
+			} else
+				alert(app.messages.errors.serverError);
+			app.validatingForm = false;
+		});
+
 		if (lMessage)
 			alert(lMessage);
 		return lResult;
@@ -290,6 +302,7 @@ var RegistrationCtrl = function($scope, $http) {
 	this.initController = function() {
 
 		this.registration = new Object();
+		this.registration.team = new Object();
 
 		if (window.location.hash.indexOf("en") >= 0)
 			this.lang = "en";

@@ -9,9 +9,11 @@
 </fieldset>
 <fieldset id="complementaryFs">
 	<legend> {{regCtrl.messages.labels.complementary}} </legend>
-	<textarea id="complementary_text" name="data[complementary]"
-		data-ng-model="registration.details"></textarea>
+	<textarea id="complementary_text"
+		data-ng-model="regCtrl.registration.team.details"></textarea>
 </fieldset>
 
-<input type="submit" value="{{regCtrl.messages.values.submit}}">
+<input type="submit" class="btn btn-lg btn-block"
+	data-ng-class="{'btn-success': regForm.$valid, 'btn-danger':!regForm.$valid}"
+	value="{{regCtrl.messages.values.submit}}">
 

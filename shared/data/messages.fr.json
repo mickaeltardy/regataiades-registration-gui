@@ -7,7 +7,9 @@
         "clubCity" : "Ville",
         "email" : "Email",
         "password" : "Mot de passe",
+        "passwordConfirmation" : "Confirmation du mot de passe",
         "telNumber" : "Numéro de téléphone",
+        "zipCode" : "Code postal",
         "crews" : "Equipages",
         "crew" : "Equipage",
         "coaches" : "Accompagnateurs",
@@ -24,7 +26,7 @@
         "arrival" : "Arrivée",
         "accomodation" : "Logement",
         "price" : "Total à payer",
-        "complementary" : "Complementaire",
+        "complementary" : "Commentaire",
         "hosting" : "Repas",
         "bookingInfo" : "Chaque chambre est reservée pour deux nuits",
         "mealsInfo" : "Veuillez noter que tout engagement non respecté sera facturé",
@@ -77,7 +79,8 @@
         "requiredFieldsInvalid" : "Certains champs obligatoires  ne sont pas correctement renseignés", 
         "needToSpecifyACaptain" : "Un capitaine d'équipage doit être indiqué",
         "warningMembersCnt" : "Attention : certains rameurs apparaissent dans plusieurs équipages. Cela n'est pas autorisé par la réglementation.",
-        "formValidated" : "Le formulaire est validé avec succès. Veuillez vérifiez votre boîte mail pour plus d'instructions."
+        "formValidated" : "Le formulaire est validé avec succès. Veuillez vérifiez votre boîte mail pour plus d'instructions.",
+        "passwordsInequal" : "Les mots de passe ne sont pas identiques"
     },
     "errors" : {
             "invalidForm" : "Le formulaire n'est pas correctement rempli"
@@ -100,7 +103,7 @@
     }, 
     "info" : {
     	"formDetails" : "Le formulaire de pré-inscription vous permet d'inscrire votre délégation aux Régataïades.",
-    	"coachesDetails" : "Vous pouvez indiquer les etraineurs et les accompagnateurs qui font partie de la délégation. Ceci n'est pas obligatoire.",
+    	"coachesDetails" : "Vous pouvez indiquer les entraineurs et les accompagnateurs qui font partie de la délégation. Ceci n'est pas obligatoire.",
     	"crewsDetails" : "Vous n'êtes pas obligés de renseigner toutes les informations sur les rameurs pour inscrire un équipage, mais elles devront être fournies avant le jour de l'évenement."
 	}
 }

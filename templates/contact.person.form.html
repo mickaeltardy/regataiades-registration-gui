@@ -2,24 +2,24 @@
 	<legend>{{regCtrl.messages.labels.contactPerson}}</legend>
 	<ol>
 		<li><label class="required" for="email">{{regCtrl.messages.labels.email}}</label>
-			<input id="email" type="email" name="data[contact][email]"
-			placeholder="your@email.com" required="required"
-			data-ng-model="regCtrl.registration.contact.email" /></li>
+			<input id="email" type="email" placeholder="your@email.com"
+			required="required" data-ng-model="regCtrl.registration.user.login" /></li>
 		<li><label class="required" for="email">{{regCtrl.messages.labels.password}}</label>
-			<input id="password" type="password" name="data[contact][password]"
-			required="required"
-			data-ng-model="regCtrl.registration.contact.password" /></li>
+			<input id="password" type="password" required="required"
+			data-ng-model="regCtrl.registration.user.password" /></li>
+		<li><label class="required" for="email">{{regCtrl.messages.labels.passwordConfirmation}}</label>
+			<input id="password" type="password" required="required"
+			data-ng-model="regCtrl.registration.user.passwordConfirmation" /></li>
 		<li><label class="required" for="name">{{regCtrl.messages.labels.name}}</label>
-			<input id="name" type="text" name="data[contact][name]"
-			required="required" data-ng-model="regCtrl.registration.contact.name" /></li>
+			<input id="name" type="text" required="required"
+			data-ng-model="regCtrl.registration.team.contactName" /></li>
 		<li><label class="required" for="surname">{{regCtrl.messages.labels.surname}}</label>
-			<input id="surname" type="text" name="data[contact][surname]"
-			required="required"
-			data-ng-model="regCtrl.registration.contact.surname" /></li>
+			<input id="surname" type="text" required="required"
+			data-ng-model="regCtrl.registration.team.contactSurname" /></li>
 		<li><label class="required" for="tel_number">{{regCtrl.messages.labels.telNumber}}
-		</label> <input id="tel_number" type="text" name="data[contact][tel]"
-			placeholder="+(XX)XXXXXXX" required="required"
-			data-ng-model="regCtrl.registration.contact.telNumber" /></li>
+		</label> <input id="tel_number" type="text" placeholder="+(XX)XXXXXXX"
+			required="required"
+			data-ng-model="regCtrl.registration.team.contactTelephone" /></li>
 
 	</ol>
 </fieldset>

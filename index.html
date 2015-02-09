@@ -5,18 +5,37 @@
 <title></title>
 <link rel="stylesheet" href="stylesheets/screen.css" media="all"
 	type="text/css" />
+
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css"
+	media="all" type="text/css" />
 <link rel="stylesheet" href="stylesheets/registration.app.css"
 	media="all" type="text/css" />
 </head>
 <body>
-	<div data-ng-controller="RegistrationController as regCtrl">
+	<div class="welcome">
+		<a href="http://una-club.fr" title="Regataiades"><img
+			src="shared/img/logo-ridn.png"></a>
+		<h1>
+			Régataïades 2015 <br />XXXI Edition
+		</h1>
+		<h2 id="date">9-10 May 2015</h2>
+	</div>
+	<div class="registrator" data-ng-controller="RegistrationController as regCtrl">
+
 		<h2 class="title" style="visibility: visible;">
 			{{regCtrl.messages.title}}</h2>
 
 		<div data-language-selector></div>
+
+		<ul class="notifications">
+			<li data-ng-repeat="notification in regCtrl.notifications"
+				data-ng-class="notification.type">{{notification.text}}</li>
+		</ul>
+
 		<form name="regForm"
-			data-ng-submit="regForm.validate() && regCtrl.registrateTeam()"
+			data-ng-submit="regCtrl.validateForm(regForm.$valid) && regCtrl.submitForm()"
 			novalidate>
+			<div class="info">{{regCtrl.messages.info.formDetails}}</div>
 			<div data-contact-person-form></div>
 			<div data-club-info-form></div>
 			<div data-crews-comporitor-form></div>
@@ -24,11 +43,10 @@
 			<div data-resume-form></div>
 		</form>
 	</div>
-
-
 	<script src="lib/jquery/dist/jquery.js"></script>
 	<script src="lib/angular/angular.js"></script>
 	<script src="js/app.config.js"></script>
+	<script src="js/registration.ctrl.js"></script>
 	<script src="js/registration.app.js"></script>
 
 
