@@ -133,7 +133,7 @@ input[type=text], input[type=date], input[type=email], input[type=password],
 	border: 0px;
 	border-bottom: $borderStyle;
 	padding: $smallPadding;
-	font-size: 90%;
+	font-size: 100%;
 	font-style: italic;
 }
 
@@ -208,6 +208,10 @@ ul.notifications>li.warning { @include notificationsStyle(rgba(255, 144,
 
 ul.notifications>li.error { @include notificationsStyle(rgba(255, 0, 0,
 	0.1))
+	
+}
+
+ul.notifications>li.info { @include notificationsStyle(rgba(91, 192, 222, 0.1))
 	
 }
 

@@ -80,10 +80,14 @@
         "needToSpecifyACaptain" : "Un capitaine d'équipage doit être indiqué",
         "warningMembersCnt" : "Attention : certains rameurs apparaissent dans plusieurs équipages. Cela n'est pas autorisé par la réglementation.",
         "formValidated" : "Le formulaire est validé avec succès. Veuillez vérifiez votre boîte mail pour plus d'instructions.",
-        "passwordsInequal" : "Les mots de passe ne sont pas identiques"
+        "passwordsInequal" : "Les mots de passe ne sont pas identiques",
+        "successfulRegistration" : "Votre inscription est en cours de validation. Veuillez regarder votre boîte mail pour plus de détails"
     },
     "errors" : {
-            "invalidForm" : "Le formulaire n'est pas correctement rempli"
+            "invalidForm" : "Le formulaire n'est pas correctement rempli",
+            "teamCreationFalure" : "Une erreur d'inscription s'est produite", 
+			"userCreationFalure" : "Impossible de créer un compte utilisateur",
+			"userAlreadyExists" : "Un utilisateur avec un tel email existe déjà"
     },
     "boats" : {
         "W4x" : {"label" : "FU4x", "key" : "W4x"},

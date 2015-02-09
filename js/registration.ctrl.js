@@ -270,13 +270,18 @@ var RegistrationCtrl = function($scope, $http) {
 			url : config.registerTeamUrl + "?lang=" + app.lang,
 			data : app.registration,
 			dataType : 'jsonp'
-		}).success(function(data, status) {
-			if (data == "OK") {
+		}).success(function(response, status) {
+			if (response.status === 'success') {
 				app.completeForm = true;
 				app.inProgress = false;
 				$('html,body').scrollTop(0);
-			} else
-				alert(app.messages.errors.serverError);
+				if(response.notification){
+					this.addInfoNotification(this.messages.messages[notification]);
+				}
+			} else{
+				alert(app.messages.errors[response.error]);
+			}
+				
 			app.validatingForm = false;
 		});
 
@@ -286,6 +291,9 @@ var RegistrationCtrl = function($scope, $http) {
 
 	}
 
+	this.addInfoNotification = function(pText) {
+		this.addNotification(pText, "info");
+	}
 	this.addWarningNotification = function(pText) {
 		this.addNotification(pText, "warning");
 	}
@@ -322,6 +330,7 @@ var RegistrationCtrl = function($scope, $http) {
 
 		this.initListeners();
 		this.loadMessages();
+		this.inProgress = true;
 
 	};
 

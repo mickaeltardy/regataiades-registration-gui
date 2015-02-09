@@ -25,7 +25,7 @@
         "contactPerson" : "Contact person",
         "arrival" : "Arrival",
         "accomodation" : "Accomodation",
-        "complementary" : "Complementary",
+        "complementary" : "Comments",
         "hosting" : "Meals",
         "price" : "Pricing",
         "delete" : "Delete",
@@ -73,10 +73,14 @@
         "needToSpecifyACaptain" : "A captain shall be specified for each crew",
         "warningMembersCnt" : "Attention : it seem like some of the athletes are engaged in several crews. This is not accepted by the regatta rules.",
         "formValidated" : "The form is successfully submitted. Please check your mailbox for further instructions.",
-        "passwordsInequal" : "Passwords are not the same"
+        "passwordsInequal" : "Passwords are not the same",
+        "successfulRegistration" : "Your registration is being validated. Check your email for further details."
     },
     "errors" : {
-        "invalidForm" : "The form is not filled in correctly. Please check it out and then submit again."
+        "invalidForm" : "The form is not filled in correctly. Please check it out and then submit again.",
+        "teamCreationFalure" : "Registration error has occured", 
+		"userCreationFalure" : "Unable to create user account",
+		"userAlreadyExists" : "A user with such email already exists"
     },
     "boats" : {
         "W4x" : {"label" : "W4x", "key" : "W4x"},

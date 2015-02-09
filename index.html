@@ -34,7 +34,7 @@
 
 		<form name="regForm"
 			data-ng-submit="regCtrl.validateForm(regForm.$valid) && regCtrl.submitForm()"
-			novalidate>
+			novalidate data-ng-show="regCtrl.inProgress">
 			<div class="info">{{regCtrl.messages.info.formDetails}}</div>
 			<div data-contact-person-form></div>
 			<div data-club-info-form></div>
