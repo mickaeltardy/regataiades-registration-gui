@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="stylesheets/screen.css" media="all"
 	type="text/css" />
 
-	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css"
+<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css"
 	media="all" type="text/css" />
 <link rel="stylesheet" href="stylesheets/registration.app.css"
 	media="all" type="text/css" />
@@ -20,8 +20,13 @@
 		</h1>
 		<h2 id="date">9-10 May 2015</h2>
 	</div>
-	<div class="registrator" data-ng-controller="RegistrationController as regCtrl">
-
+	<div class="registrator"
+		data-ng-controller="RegistrationController as regCtrl">
+		<div id="preloaderContainer" data-ng-show="regCtrl.loading">
+			<div id="preloader">
+				<img src="shared/img/preloader.gif" width="116px" height="40px" />
+			</div>
+		</div>
 		<h2 class="title" style="visibility: visible;">
 			{{regCtrl.messages.title}}</h2>
 
@@ -32,7 +37,7 @@
 				data-ng-class="notification.type">{{notification.text}}</li>
 		</ul>
 
-		<form name="regForm"
+		<form class="regForm" name="regForm"
 			data-ng-submit="regCtrl.validateForm(regForm.$valid) && regCtrl.submitForm()"
 			novalidate data-ng-show="regCtrl.inProgress">
 			<div class="info">{{regCtrl.messages.info.formDetails}}</div>
@@ -42,6 +47,9 @@
 			<div data-coaches-list-form></div>
 			<div data-resume-form></div>
 		</form>
+		
+		<a href="http://regataiades.fr" class="btn btn-block btn-default">{{regCtrl.messages.labels.mainpage}}</a>
+		
 	</div>
 	<script src="lib/jquery/dist/jquery.js"></script>
 	<script src="lib/angular/angular.js"></script>

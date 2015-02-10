@@ -50,7 +50,8 @@
         "requiredFields" : "Required fields", 
         "sexes" : {"f" : "F", "m" : "M"},
         "places" : {"9" :  [ "Bow", "2", "3", "4", "5", "6", "7", "Stroke", "Cox" ], "4" : ["Bow", "2", "3", "Stroke"]},
-        "transport" : ["car", "bus", "train", "plane"]
+        "transport" : ["car", "bus", "train", "plane"], 
+        "mainpage" : "Go back to main"
         
     },
     "values" : {
@@ -99,9 +100,10 @@
         "registration" : {"title" : "[Regataiades] Online pre-registration form successfully submitted"}
     }, 
     "info" : {
-    	"formDetails" : "The pre-registration form allows the registration of your team on the Régataïades event",
+    	"formDetails" : "The pre-registration form allows the registration of your team on the Régataïades event. The provided email and password will allow you to update your registration details as well as book meals for the event's weekend",
     	"coachesDetails" : "You can specify the coaches and staff being part of the team. This remains optional.",
-    	"crewsDetails" : "You do not have to provide all of the athletes details in order to register a crew, but these details shall be given before the D-0."
+    	"crewsDetails" : "You do not have to provide all of the athletes details in order to register a crew, but these details shall be given before the D-0.",
+    	"commentDetails" : "You can provide any complementary information as well as question about your participation (e.g. boat loan, date and time of arrival etc.)"
 	}
     
 }

@@ -55,7 +55,8 @@
         "requiredFields" : "Champs requis",
         "sexes" : {"f" : "F", "m" : "H"},
         "places" : {"9" :  [ "8", "7", "6", "5", "4", "3", "2", "1", "Barreur" ], "4" : ["4", "3", "2", "1"]},
-        "transport" : ["voiture", "bus", "train", "avion"]
+        "transport" : ["voiture", "bus", "train", "avion"],
+        "mainpage" : "Retour vers le site"
     
     }, 
     "values" : { 
@@ -106,8 +107,9 @@
         "registration" : {"title" : "[Regataiades] Formulaire de préinscription rempli"}
     }, 
     "info" : {
-    	"formDetails" : "Le formulaire de pré-inscription vous permet d'inscrire votre délégation aux Régataïades.",
+    	"formDetails" : "Le formulaire de pré-inscription vous permet d'inscrire votre délégation aux Régataïades. Avec l'adresse mail et le mot de passe saisis vous allez pouvoir mettre à jour votre dossier d'inscription ainsi que reserver les repas pour le week-end de l'événement.",
     	"coachesDetails" : "Vous pouvez indiquer les entraineurs et les accompagnateurs qui font partie de la délégation. Ceci n'est pas obligatoire.",
-    	"crewsDetails" : "Vous n'êtes pas obligés de renseigner toutes les informations sur les rameurs pour inscrire un équipage, mais elles devront être fournies avant le jour de l'évenement."
+    	"crewsDetails" : "Vous n'êtes pas obligés de renseigner toutes les informations sur les rameurs pour inscrire un équipage, mais elles devront être fournies avant le jour de l'évenement.",
+    	"commentDetails" : "Vous pouvez y mentionner toute information ou question conernant votre participation (ex. prêt de bateaux, jour et l'heure d'arrivée etc.)" 
 	}
 }

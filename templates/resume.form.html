@@ -7,6 +7,7 @@
 			{{regCtrl.getTotalPrice()}}</li>
 	</ol>
 </fieldset>
+<div class="info">{{regCtrl.messages.info.commentDetails}}</div>
 <fieldset id="complementaryFs">
 	<legend> {{regCtrl.messages.labels.complementary}} </legend>
 	<textarea id="complementary_text"
@@ -16,4 +17,5 @@
 <input type="submit" class="btn btn-lg btn-block"
 	data-ng-class="{'btn-success': regForm.$valid, 'btn-danger':!regForm.$valid}"
 	value="{{regCtrl.messages.values.submit}}">
+
 

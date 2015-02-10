@@ -259,12 +259,12 @@ var RegistrationCtrl = function($scope, $http) {
 		 * Tweaking objects before submit
 		 */
 		if (app.registration && app.registration.team && app.registration.user
-				&& app.registration.user.email) {
-			app.registration.team.email = app.registration.user.email;
+				&& app.registration.user.login) {
+			app.registration.team.contactEmail = app.registration.user.login;
 			app.registration.team.invited = app.invitation;
 
 		}
-
+		app.loading = true;
 		$http({
 			method : 'POST',
 			url : config.registerTeamUrl + "?lang=" + app.lang,
@@ -274,9 +274,10 @@ var RegistrationCtrl = function($scope, $http) {
 			if (response.status === 'success') {
 				app.completeForm = true;
 				app.inProgress = false;
+				app.loading = false;
 				$('html,body').scrollTop(0);
 				if(response.notification){
-					this.addInfoNotification(this.messages.messages[notification]);
+					app.addInfoNotification(app.messages.messages[response.notification]);
 				}
 			} else{
 				alert(app.messages.errors[response.error]);
