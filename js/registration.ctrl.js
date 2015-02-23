@@ -3,6 +3,11 @@ var RegistrationCtrl = function($scope, $http) {
 
 	this.messagesStore = new Object();
 
+	this.checkOutData = function(){
+		
+	}
+	
+	
 	this.addCrew = function() {
 		if (!this.registration.team.crews)
 			this.registration.team.crews = new Array();
@@ -31,21 +36,21 @@ var RegistrationCtrl = function($scope, $http) {
 		}
 	}
 
-	this.changeCrewType = function(pCrew) {
+	this.changeCrewCategory = function(pCrew) {
 		if (pCrew) {
 			pCrew.athletes = new Array();
-			for (var i = 0; i < this.getMembersCount(pCrew.type); i++) {
+			for (var i = 0; i < this.getMembersCount(pCrew.category); i++) {
 				var lMember = new Object();
-				lMember.sex = this.getMembersSex(pCrew.type);
+				lMember.sex = this.getMembersSex(pCrew.category);
 				pCrew.athletes.push(lMember)
 			}
 
 		}
 	}
 
-	this.getMembersCount = function(pType) {
+	this.getMembersCount = function(pCategory) {
 
-		switch (pType) {
+		switch (pCategory) {
 		case "M4x":
 		case "W4x":
 			return 4;
@@ -56,8 +61,8 @@ var RegistrationCtrl = function($scope, $http) {
 
 	};
 
-	this.getMembersSex = function(pType) {
-		switch (pType) {
+	this.getMembersSex = function(pCategory) {
+		switch (pCategory) {
 		case "W8+":
 		case "W4x":
 			return 'F';
@@ -76,7 +81,7 @@ var RegistrationCtrl = function($scope, $http) {
 		if (lCrews && lCrews.length > 0) {
 
 			for (var i = 0; i < lCrews.length; i++) {
-				if (!lCrews[i].type) {
+				if (!lCrews[i].category) {
 					continue;
 				}
 				lMembersCnt += lCrews[i].athletes.length;
@@ -113,7 +118,7 @@ var RegistrationCtrl = function($scope, $http) {
 	}
 
 	this.getPlaceLabel = function(pCrew, pNum) {
-		return app.messages.labels.places[this.getMembersCount(pCrew.type)][pNum];
+		return app.messages.labels.places[this.getMembersCount(pCrew.category)][pNum];
 	}
 
 	this.loadMessages = function() {
@@ -161,7 +166,7 @@ var RegistrationCtrl = function($scope, $http) {
 		if (lCrews && lCrews.length > 0) {
 
 			for (var i = 0; i < lCrews.length; i++) {
-				if (!lCrews[i].type) {
+				if (!lCrews[i].category) {
 					lResult = false;
 					continue;
 				}
@@ -332,6 +337,8 @@ var RegistrationCtrl = function($scope, $http) {
 		this.initListeners();
 		this.loadMessages();
 		this.inProgress = true;
+		
+		this.checkOutData();
 
 	};
 

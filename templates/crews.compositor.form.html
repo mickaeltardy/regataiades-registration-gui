@@ -14,12 +14,12 @@
 							{{regCtrl.messages.labels.crew}} N{{$index+1}}
 						</div>
 						<div class="catLabel">
-							<label for="crew_{{crew.id}}_type">{{regCtrl.messages.labels.category}}</label>
+							<label for="crew_{{crew.id}}_category">{{regCtrl.messages.labels.category}}</label>
 						</div>
 						<div class="dropboxContainer">
-							<select data-ng-model="crew.type"
-								data-ng-change="regCtrl.changeCrewType(crew)"
-								id="crew_{{crew.id}}_type">
+							<select data-ng-model="crew.category"
+								data-ng-change="regCtrl.changeCrewCategory(crew)"
+								id="crew_{{crew.id}}_category">
 								<option value="">---</option>
 								<option data-ng-repeat="boat in regCtrl.boats" value="{{boat}}">{{regCtrl.messages.boats[boat].label}}</option>
 							</select>
