@@ -3,11 +3,50 @@ var RegistrationCtrl = function($scope, $http) {
 
 	this.messagesStore = new Object();
 
-	this.checkOutData = function(){
-		
+	this.checkOutData = function() {
+		var lToken = localStorage.getItem("auth_token");
+
+		if (lToken) {
+			var lRqConfig = {
+				headers : {
+					'X-AUTH-TOKEN' : lToken
+				}
+			};
+
+			$http.get(config.applicationUrl + "registration/retrieve",
+					lRqConfig).success(function(data, status, headers, config) {
+				app.updateMode = true;
+				app.registration = app.parseRegistrationData(data);
+			});
+
+		}
 	}
-	
-	
+
+	this.parseRegistrationData = function(pData) {
+		if (pData) {
+			if (pData.team && pData.team.crews) {
+				for (var i = 0; i < pData.team.crews.length; i++) {
+					var lCrew = pData.team.crews[i];
+					var lAthletesCnt = this.getMembersCount(lCrew.category);
+					if (lCrew.athletes.length < lAthletesCnt) {
+						for (var j = 0; j = lCrew.athletes.length
+								- lAthletesCnt; j++) {
+							var lMember = new Object();
+							lMember.sex = this.getMembersSex(lCrew.category);
+							lCrew.athletes.push(lMember);
+						}
+					}
+				}
+			}
+			if (pData.user) {
+				pData.user.password = localStorage.getItem("auth_token");
+				pData.user.passwordConfirmation = localStorage
+						.getItem("auth_token");
+			}
+		}
+		return pData;
+	}
+
 	this.addCrew = function() {
 		if (!this.registration.team.crews)
 			this.registration.team.crews = new Array();
@@ -270,26 +309,39 @@ var RegistrationCtrl = function($scope, $http) {
 
 		}
 		app.loading = true;
-		$http({
+		lSubmitService = (this.updateMode) ? "registration/update"
+				: "registration/registrate";
+		var lToken = localStorage.getItem("auth_token");
+		var lTransferData = {
 			method : 'POST',
-			url : config.registerTeamUrl + "?lang=" + app.lang,
+			url : config.applicationUrl + lSubmitService + "?lang=" + app.lang,
 			data : app.registration,
 			dataType : 'jsonp'
-		}).success(function(response, status) {
-			if (response.status === 'success') {
-				app.completeForm = true;
-				app.inProgress = false;
-				app.loading = false;
-				$('html,body').scrollTop(0);
-				if(response.notification){
-					app.addInfoNotification(app.messages.messages[response.notification]);
-				}
-			} else{
-				alert(app.messages.errors[response.error]);
+		};
+		if (lToken) {
+			lTransferData.headers = {
+				'X-AUTH-TOKEN' : lToken
 			}
-				
-			app.validatingForm = false;
-		});
+		}
+
+		$http(lTransferData)
+				.success(
+						function(response, status) {
+							if (response.status === 'success') {
+								app.completeForm = true;
+								app.inProgress = false;
+								app.loading = false;
+								$('html,body').scrollTop(0);
+								if (response.notification) {
+									app
+											.addInfoNotification(app.messages.messages[response.notification]);
+								}
+							} else {
+								alert(app.messages.errors[response.error]);
+							}
+
+							app.validatingForm = false;
+						});
 
 		if (lMessage)
 			alert(lMessage);
@@ -337,7 +389,7 @@ var RegistrationCtrl = function($scope, $http) {
 		this.initListeners();
 		this.loadMessages();
 		this.inProgress = true;
-		
+		this.updateMode = false;
 		this.checkOutData();
 
 	};

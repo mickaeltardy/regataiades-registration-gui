@@ -5,27 +5,29 @@
 		data-ng-click="regCtrl.addCrew()">{{regCtrl.messages.values.addCrew}}</span>
 
 	<div id="crews">
-		<div data-ng-repeat="crew in regCtrl.registration.team.crews" class="crew"
-			id="crew_{{crew.id}}">
+		<div data-ng-repeat="crew in regCtrl.registration.team.crews"
+			class="crew" id="crew_{{crew.id}}">
+			<input type="hidden" data-ng-model="crew.id" />
 			<ol>
 				<li>
 					<div class="crewCreator">
-						<div class="crewLabel">
-							{{regCtrl.messages.labels.crew}} N{{$index+1}}
-						</div>
+						<div class="crewLabel">{{regCtrl.messages.labels.crew}}
+							N{{$index+1}}</div>
 						<div class="catLabel">
 							<label for="crew_{{crew.id}}_category">{{regCtrl.messages.labels.category}}</label>
 						</div>
 						<div class="dropboxContainer">
 							<select data-ng-model="crew.category"
 								data-ng-change="regCtrl.changeCrewCategory(crew)"
-								id="crew_{{crew.id}}_category">
+								id="crew_{{crew.id}}_category"
+								data-ng-options="regCtrl.messages.boats[boat].label for boat in regCtrl.boats">
 								<option value="">---</option>
-								<option data-ng-repeat="boat in regCtrl.boats" value="{{boat}}">{{regCtrl.messages.boats[boat].label}}</option>
+
 							</select>
 						</div>
 						<div class="crewDeleteBtn">
-							<span class="btn btn-warning" data-ng-click="regCtrl.removeCrew($index)">{{regCtrl.messages.labels.delete}}</span>
+							<span class="btn btn-warning"
+								data-ng-click="regCtrl.removeCrew($index)">{{regCtrl.messages.labels.delete}}</span>
 						</div>
 					</div>
 				</li>
@@ -43,7 +45,9 @@
 						</thead>
 						<tbody>
 							<tr data-ng-repeat="member in crew.athletes" class="memberItem">
-								<td>{{regCtrl.getPlaceLabel(crew, $index)}}</td>
+
+								<td>{{regCtrl.getPlaceLabel(crew, $index)}}<input
+									type="hidden" data-ng-model="member.id" /></td>
 								<td><input type="text" data-ng-model="member.name"
 									placeholder="{{regCtrl.messages.labels.name}}" /></td>
 								<td><input type="text" data-ng-model="member.surname"

@@ -1,6 +1,6 @@
 <div class="info">{{regCtrl.messages.info.coachesDetails}}</div>
 <fieldset id="coachFs">
-	<legend> {{regCtrl.messages.labels.coaches}} </legend>	
+	<legend> {{regCtrl.messages.labels.coaches}} </legend>
 	<span class="btn btn-primary" name="add_coach" id="add_coach"
 		data-ng-click="regCtrl.addCoach()">{{regCtrl.messages.values.addCoach}}</span>
 	<div id="coaches">
@@ -14,6 +14,7 @@
 						data-ng-click="regCtrl.removeCoach($index)">{{regCtrl.messages.labels.delete}}</span>
 				</div>
 			</div>
+			<input type="hidden" data-ng-model="coach.id" />
 			<ol>
 				<li><label for="coach_{{coach.id}}_name">{{regCtrl.messages.labels.name}}</label>
 					<input type="text" id="coach_{{coach.id}}_name"

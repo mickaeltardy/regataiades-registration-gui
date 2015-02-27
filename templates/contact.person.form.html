@@ -4,10 +4,12 @@
 		<li><label class="required" for="email">{{regCtrl.messages.labels.email}}</label>
 			<input id="email" type="email" placeholder="your@email.com"
 			required="required" data-ng-model="regCtrl.registration.user.login" /></li>
-		<li><label class="required" for="email">{{regCtrl.messages.labels.password}}</label>
-			<input id="password" type="password" required="required"
+		<li data-ng-hide="regCtrl.updateMode"><label class="required"
+			for="email">{{regCtrl.messages.labels.password}}</label> <input
+			id="password" type="password" required="required"
 			data-ng-model="regCtrl.registration.user.password" /></li>
-		<li><label class="required" for="email">{{regCtrl.messages.labels.passwordConfirmation}}</label>
+		<li data-ng-hide="regCtrl.updateMode"><label class="required"
+			for="email">{{regCtrl.messages.labels.passwordConfirmation}}</label>
 			<input id="password" type="password" required="required"
 			data-ng-model="regCtrl.registration.user.passwordConfirmation" /></li>
 		<li><label class="required" for="name">{{regCtrl.messages.labels.name}}</label>
