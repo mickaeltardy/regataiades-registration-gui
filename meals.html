@@ -64,7 +64,7 @@
 
 			<form class="bookForm" name="bookForm"
 				data-ng-submit="bookCtrl.validateForm(bookForm.$valid) && bookCtrl.submitForm()"
-				novalidate data-ng-show="bookCtrl.inProgress">
+				novalidate data-ng-show="bookCtrl.inProgress && bookCtrl.updateMode" >
 				
 				<div data-meal-booking-form></div>
 				
