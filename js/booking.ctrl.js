@@ -20,7 +20,7 @@ var BookingCtrl = function($scope, $http) {
 					});
 
 		} else {
-			app.updateMode = true;
+			app.updateMode = false;
 			app
 					.addWarningNotification(app.messages.meals.messages.needToRegister)
 		}
