@@ -115,7 +115,7 @@
 	"meals" : {
 		"title" : "Reservation des repas",
 		"messages" : {
-			"neetToRegister" : "Vous avez besoin de vous inscrire à la régate avant de reserver les repas",
+			"needToRegister" : "Vous avez besoin de vous inscrire à la régate avant de reserver les repas",
 			"bookingDone" : "Votre reservation des repas a été mise à jour. Veillez vérifier vos emails pour plus d'informations",
 			"bookingFailure" : "La reservation des repas n'a pas pu être finalisée"
 		},
