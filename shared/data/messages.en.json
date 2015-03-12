@@ -104,6 +104,41 @@
     	"coachesDetails" : "You can specify the coaches and staff being part of the team. This remains optional.",
     	"crewsDetails" : "You do not have to provide all of the athletes details in order to register a crew, but these details shall be given before the D-0.",
     	"commentDetails" : "You can provide any complementary information as well as question about your participation (e.g. boat loan, date and time of arrival etc.)"
+	},
+	"meals" : {
+		"title" : "Meals booking",
+		"messages" : {
+			"neetToRegister" : "A registration is required in order to get access to the meals booking.",
+			"bookingDone" : "Your meals booking has been updated. Please check your email for further information.",
+			"bookingFailure" : "Unfortunately the meals booking hasn't been completed."
+		},
+		"labels" : {
+			"quantity" : "Quantity"
+		},
+		"saturdayNoon" : {
+			"label" : "Saturday noon",
+			"menu" : {
+				"meal" : "Paella",
+				"dessert": "Pannacotta",
+				"bread" : "Bread, Still water"
+				}
+		},
+		"saturdayNight" : {
+			"label" : "Saturday night",
+			"menu" : {
+				"meal" : "Penne bolognaise",
+				"dessert": "Fruits crumble",
+				"bread" : "Bread, Still water"
+				}
+		},
+		"sundayNoon" : {
+			"label" : "Dimanche midi",
+			"menu" : {
+				"meal" : "Sagar chicken with rice",
+				"dessert": "Chocolate mousse",
+				"bread" : "Bread, Still water"
+				}
+		}
 	}
     
 }

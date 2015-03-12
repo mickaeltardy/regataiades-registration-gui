@@ -111,5 +111,41 @@
     	"coachesDetails" : "Vous pouvez indiquer les entraineurs et les accompagnateurs qui font partie de la délégation. Ceci n'est pas obligatoire.",
     	"crewsDetails" : "Vous n'êtes pas obligés de renseigner toutes les informations sur les rameurs pour inscrire un équipage, mais elles devront être fournies avant le jour de l'évenement.",
     	"commentDetails" : "Vous pouvez y mentionner toute information ou question conernant votre participation (ex. prêt de bateaux, jour et l'heure d'arrivée etc.)" 
+	},
+	"meals" : {
+		"title" : "Reservation des repas",
+		"messages" : {
+			"neetToRegister" : "Vous avez besoin de vous inscrire à la régate avant de reserver les repas",
+			"bookingDone" : "Votre reservation des repas a été mise à jour. Veillez vérifier vos emails pour plus d'informations",
+			"bookingFailure" : "La reservation des repas n'a pas pu être finalisée"
+		},
+		"labels" : {
+			"quantity" : "Quantité"
+		},
+		"saturdayNoon" : {
+			"label" : "Samedi midi",
+			"menu" : {
+				"meal" : "Paella réalisée sur place",
+				"dessert": "Panna cotta",
+				"bread" : "Pain, Eau plate"
+				}
+		},
+		"saturdayNight" : {
+			"label" : "Samedi soir",
+			"menu" : {
+				"meal" : "Penne bolognaise",
+				"dessert": "Crumble aux fruits",
+				"bread" : "Pain, Eau plate"
+				}
+		},
+		"sundayNoon" : {
+			"label" : "Dimanche midi",
+			"menu" : {
+				"meal" : "Poulet sagar et riz",
+				"dessert": "Mousse au chocolat",
+				"bread" : "Pain, Eau plate"
+				}
+		}
 	}
+	
 }

@@ -1,0 +1,97 @@
+<html data-ng-app="booking">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title></title>
+<link rel="stylesheet" href="stylesheets/screen.css" media="all"
+	type="text/css" />
+
+<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css"
+	media="all" type="text/css" />
+<link rel="stylesheet" href="stylesheets/registration.app.css"
+	media="all" type="text/css" />
+<link rel="stylesheet" href="stylesheets/booking.app.css" media="all"
+	type="text/css" />
+<link rel="stylesheet" type="text/css"
+	href="lib/slick-carousel/slick/slick.css" />
+
+<link rel="stylesheet" type="text/css"
+	href="lib/slick-carousel/slick/slick-theme.css" />
+</head>
+<body>
+	<div id="slider-container">
+		<div class="slider">
+			<div class="slide">
+				<img src="shared/img/gallery/img-2-glob.jpg">
+			</div>
+			<div class="slide">
+				<img src="shared/img/gallery/img-3.jpg">
+			</div>
+			<div class="slide">
+				<img src="shared/img/gallery/img-4.jpg">
+			</div>
+			<div class="slide">
+				<img src="shared/img/gallery/img-5.jpg">
+			</div>
+			<div class="slide">
+				<img src="shared/img/gallery/img-6-dessert.jpg">
+			</div>
+		</div>
+	</div>
+	<div id="form-container">
+		<div class="welcome">
+			<a href="http://una-club.fr" title="Regataiades"><img
+				src="shared/img/logo-ridn-tr.png"></a><a href="http://www.peps-restauration.fr/"
+				title="Regataiades"><img src="shared/img/peps-logo.png"></a>
+			<h1>Régataïades 2015 / XXXI Edition</h1>
+			<h2 id="date">9-10 May 2015</h2>
+		</div>
+		<div class="registrator"
+			data-ng-controller="BookingController as bookCtrl">
+			<div id="preloaderContainer" data-ng-show="bookCtrl.loading">
+				<div id="preloader">
+					<img src="shared/img/preloader.gif" width="116px" height="40px" />
+				</div>
+			</div>
+			<h2 class="title" style="visibility: visible;">
+				{{bookCtrl.messages.meals.title}}</h2>
+			<div data-language-selector></div>
+
+			<ul class="notifications">
+				<li data-ng-repeat="notification in bookCtrl.notifications"
+					data-ng-class="notification.type">{{notification.text}}</li>
+			</ul>
+
+			<form class="bookForm" name="bookForm"
+				data-ng-submit="bookCtrl.validateForm(bookForm.$valid) && bookCtrl.submitForm()"
+				novalidate data-ng-show="bookCtrl.inProgress">
+				
+				<div data-meal-booking-form></div>
+				
+			</form>
+
+			<a href="http://regataiades.fr" class="btn btn-block btn-default">{{bookCtrl.messages.labels.mainpage}}</a>
+
+		</div>
+	</div>
+	<script src="lib/jquery/dist/jquery.js"></script>
+	<script src="lib/angular/angular.js"></script>
+	<script type="text/javascript"
+		src="lib/slick-carousel/slick/slick.min.js"></script>
+	<script src="js/app.config.js"></script>
+	<script src="js/generic.ctrl.js"></script>
+	<script src="js/booking.ctrl.js"></script>
+	<script src="js/booking.app.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.slider').slick({
+				autoplay : true,
+				autoplaySpeed : 3000,
+				arrows : false,
+				dots : true
+			});
+		});
+	</script>
+
+</body>
+</html>

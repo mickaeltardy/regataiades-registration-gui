@@ -1,7 +1,7 @@
 var RegistrationCtrl = function($scope, $http) {
-	var app = this;
 
-	this.messagesStore = new Object();
+	GenericCtrl.apply(this, arguments);
+	var app = this;
 
 	this.checkOutData = function() {
 		var lToken = localStorage.getItem("auth_token");
@@ -160,37 +160,6 @@ var RegistrationCtrl = function($scope, $http) {
 		return app.messages.labels.places[this.getMembersCount(pCrew.category)][pNum];
 	}
 
-	this.loadMessages = function() {
-		$http.get('shared/data/messages.en.json').success(function(data) {
-			app.messagesStore.en = data;
-			$scope.$broadcast("messagesLoaded", "en");
-		});
-		$http.get('shared/data/messages.fr.json').success(function(data) {
-			app.messagesStore.fr = data;
-			$scope.$broadcast("messagesLoaded", "fr");
-		});
-	};
-
-	this.localizeMessages = function(pLang) {
-		app.messages = (app.messagesStore && app.messagesStore[pLang]) ? app.messagesStore[pLang]
-				: new Object();
-	}
-	this.loadMessagesListener = function(pEvt, pLang) {
-		if (app.lang == pLang)
-			app.localizeMessages(pLang);
-	};
-
-	this.switchLanguage = function(pLang) {
-		if (pLang) {
-			app.lang = pLang;
-			this.localizeMessages(pLang);
-		}
-	}
-
-	this.initListeners = function() {
-		$scope.$on("messagesLoaded", this.loadMessagesListener);
-	};
-
 	this.validateCoaches = function() {
 		var lResult = true;
 		// No more coaches validation
@@ -308,9 +277,9 @@ var RegistrationCtrl = function($scope, $http) {
 			app.registration.team.invited = app.invitation;
 
 		}
-		
+
 		app.registration.team.athletesNum = this.getAthletesCount();
-		
+
 		app.loading = true;
 		lSubmitService = (this.updateMode) ? "registration/update"
 				: "registration/registrate";
@@ -352,47 +321,14 @@ var RegistrationCtrl = function($scope, $http) {
 
 	}
 
-	this.addInfoNotification = function(pText) {
-		this.addNotification(pText, "info");
-	}
-	this.addWarningNotification = function(pText) {
-		this.addNotification(pText, "warning");
-	}
-	this.addErrorNotification = function(pText) {
-		this.addNotification(pText, "error");
-	}
-	this.addNotification = function(pText, pType) {
-		var lNotification = new Object();
-		lNotification.text = pText;
-		lNotification.type = pType;
-		this.notifications.push(lNotification);
-	};
-
 	this.initController = function() {
+		this.genericInit();
 
 		this.registration = new Object();
 		this.registration.team = new Object();
 
-		if (window.location.hash.indexOf("en") >= 0)
-			this.lang = "en";
-		else if (window.location.hash.indexOf("fr") >= 0)
-			this.lang = "fr";
-		else
-			this.lang = config.lang;
-
-		if (window.location.hash.indexOf("invite") >= 0)
-			this.invitation = true;
-		else
-			this.invitation = false;
-
 		this.boats = [ "W4x", "M4x", "W8+", "M8+" ];
 
-		this.notifications = new Array();
-
-		this.initListeners();
-		this.loadMessages();
-		this.inProgress = true;
-		this.updateMode = false;
 		this.checkOutData();
 
 	};
@@ -400,3 +336,6 @@ var RegistrationCtrl = function($scope, $http) {
 	this.initController();
 
 }
+
+RegistrationCtrl.prototype = GenericCtrl.prototype;
+RegistrationCtrl.prototype.constructor = RegistrationCtrl;

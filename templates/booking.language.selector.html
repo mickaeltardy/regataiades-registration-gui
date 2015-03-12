@@ -1,0 +1,11 @@
+
+<div class="selectLanguage">
+	<div>{{bookCtrl.messages.messages.switchLanguage}}</div>
+	<button class="btn"
+		data-ng-class="{'btn-default':bookCtrl.lang != 'en', 'btn-info':bookCtrl.lang == 'en'}"
+		data-ng-click="bookCtrl.switchLanguage('en')">EN</button>
+
+	<button class="btn"
+		data-ng-class="{'btn-default':bookCtrl.lang != 'fr','btn-info':bookCtrl.lang == 'fr'}"
+		data-ng-click="bookCtrl.switchLanguage('fr')">FR</button>
+</div>

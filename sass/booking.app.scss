@@ -1,0 +1,52 @@
+@import 'registration.confs';
+
+@import 'registration.mixins';
+
+@import url(//fonts.googleapis.com/css?family=Lato:700);
+
+#slider-container{
+	width: 100%;
+	opacity:0.4;
+	z-index:1;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+
+#form-container{
+	width: 100%;
+	position:absolute;
+	z-index: 100;
+}
+
+input[type=number]{
+	border:$borderStyle;
+	width:100%;
+	padding:5px; 
+}
+#form-container .row ul{
+	margin:30px;
+}
+#form-container .row ul>li{
+	list-style: disc;
+}
+
+.bookForm {
+  margin: 10px 0px 10px 0px;
+}
+
+
+ul.notifications>li.warning { @include notificationsStyle(rgba(255, 144,
+	0, 0.7))
+	
+}
+
+ul.notifications>li.error { @include notificationsStyle(rgba(255, 0, 0,
+	0.7))
+	
+}
+
+ul.notifications>li.info { @include notificationsStyle(rgba(91, 192, 222, 0.7))
+	
+}
