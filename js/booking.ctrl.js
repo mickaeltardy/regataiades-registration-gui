@@ -20,8 +20,8 @@ var BookingCtrl = function($scope, $http) {
 					});
 
 		} else {
-			this
-					.addWarningNotification(this.messages.meals.messages.needToRegister)
+			app
+					.addWarningNotification(app.messages.meals.messages.needToRegister)
 		}
 	};
 
@@ -117,7 +117,7 @@ var BookingCtrl = function($scope, $http) {
 
 	this.initController = function() {
 		this.genericInit();
-		this.checkOutData();
+		$scope.$on("messagesLocalized", this.checkOutData);
 
 	};
 
