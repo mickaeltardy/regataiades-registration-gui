@@ -18,6 +18,7 @@ var GenericCtrl = function($scope, $http) {
 	this.localizeMessages = function(pLang) {
 		app.messages = (app.messagesStore && app.messagesStore[pLang]) ? app.messagesStore[pLang]
 				: new Object();
+		$scope.$broadcast("messagesLocalized");
 	}
 	this.loadMessagesListener = function(pEvt, pLang) {
 		if (app.lang == pLang)
