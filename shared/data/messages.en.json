@@ -108,12 +108,13 @@
 	"meals" : {
 		"title" : "Meals booking",
 		"messages" : {
-			"neetToRegister" : "A registration is required in order to get access to the meals booking.",
+			"needToRegister" : "A registration is required in order to get access to the meals booking.",
 			"bookingDone" : "Your meals booking has been updated. Please check your email for further information.",
 			"bookingFailure" : "Unfortunately the meals booking hasn't been completed."
 		},
 		"labels" : {
-			"quantity" : "Quantity"
+			"quantity" : "Quantity", 
+			"submit" : "Book for "
 		},
 		"saturdayNoon" : {
 			"label" : "Saturday noon",

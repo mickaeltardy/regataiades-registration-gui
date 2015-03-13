@@ -120,7 +120,8 @@
 			"bookingFailure" : "La reservation des repas n'a pas pu être finalisée"
 		},
 		"labels" : {
-			"quantity" : "Quantité"
+			"quantity" : "Quantité", 
+			"submit" : "Reserver pour"
 		},
 		"saturdayNoon" : {
 			"label" : "Samedi midi",

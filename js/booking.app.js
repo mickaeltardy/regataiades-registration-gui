@@ -1,5 +1,5 @@
 (function() {
-	var lBookingApp = angular.module("booking", []);
+	var lBookingApp = angular.module("booking", ['ngSanitize']);
 
 	lBookingApp.directive("languageSelector", function() {
 		return {
@@ -21,5 +21,7 @@
 					[
 							'$scope',
 							'$http',
+							'$sanitize',
+							'$sce',
 							 BookingCtrl]);
 })();

@@ -25,6 +25,14 @@ input[type=number]{
 	width:100%;
 	padding:5px; 
 }
+#form-container .row h3{
+	margin-top:10px
+}
+#form-container .row h4.price{
+	position:absolute;
+	top:18px;
+	right:30px;
+}
 #form-container .row ul{
 	margin:30px;
 }

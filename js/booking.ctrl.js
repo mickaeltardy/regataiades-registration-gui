@@ -1,7 +1,9 @@
-var BookingCtrl = function($scope, $http) {
+var BookingCtrl = function($scope, $http, $sanitize, $sce) {
 	// this.prototype = GenericCtrl($scope, $http);
 	GenericCtrl.apply(this, arguments);
 	var app = this;
+
+	this.unityPrice = 8;
 
 	this.checkOutData = function() {
 		var lToken = localStorage.getItem("auth_token");
@@ -115,6 +117,21 @@ var BookingCtrl = function($scope, $http) {
 		return lResult;
 
 	};
+
+	this.getPrice = function() {
+		if (app.booking)
+			return (app.booking.sundayNoon + app.booking.saturdayNight + app.booking.saturdayNoon)
+					* this.unityPrice;
+		else
+			return 0;
+	}
+	this.getSubmitButtonLabel = function() {
+		if (this.messages && this.messages.meals)
+			return this.messages.meals.labels.submit + " " + this.getPrice()
+					+ " &euro;";
+		else
+			return "";
+	}
 
 	this.initController = function() {
 		this.genericInit();
