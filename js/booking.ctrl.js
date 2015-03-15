@@ -119,12 +119,19 @@ var BookingCtrl = function($scope, $http, $sanitize, $sce) {
 	};
 
 	this.getPrice = function() {
-		if (app.booking)
-			return (app.booking.sundayNoon + app.booking.saturdayNight + app.booking.saturdayNoon)
-					* this.unityPrice;
-		else
+		if (app.booking) {
+			var lTotal = 0;
+			lTotal += (app.booking.sundayNoon) ? app.booking.sundayNoon : 0;
+			lTotal += (app.booking.saturdayNight) ? app.booking.saturdayNight
+					: 0;
+			lTotal += (app.booking.saturdayNoon) ? app.booking.saturdayNoon : 0;
+
+			return lTotal * this.unityPrice;
+		} else {
 			return 0;
+		}
 	}
+
 	this.getSubmitButtonLabel = function() {
 		if (this.messages && this.messages.meals)
 			return this.messages.meals.labels.submit + " " + this.getPrice()
