@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Aviron Universitaire - Regataiades Internationales de
+	Nantes</title>
+<link rel="stylesheet" href="stylesheets/screen.css" media="all"
+	type="text/css" />
+<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css"
+	media="all" type="text/css" />
+<link rel="stylesheet" href="stylesheets/registration.app.css"
+	media="all" type="text/css" />
+<link rel="stylesheet" href="stylesheets/results.css" media="all"
+	type="text/css" />
+</head>
+<body>
+	<div class="welcome">
+		<a href="http://regataiades.fr" title="Regataiades"><img
+			src="shared/img/logo-ridn.png"></a>
+		<h1>
+			<span>Régataïades 2015</span> / <span>XXXI Edition</span> / <span
+				class="date">9-10 May 2015</span>
+		</h1>
+		<h2 class="live">Live</h2>
+	</div>
+	<div id="control">
+		<div>Choose the category: </div>
+		<button class="btn btn-default results-button" type="submit" data-category="W4x">W4x</button>
+		<button class="btn btn-default results-button" type="submit" data-category="W8+">W8+</button>
+		<button class="btn btn-default results-button" type="submit" data-category="M4x">M4x</button>
+		<button class="btn btn-default results-button" type="submit" data-category="M8+">M8+</button>
+		<button class="btn btn-default results-button" type="submit" data-category="">All</button>
+
+	</div>
+	<div id="results"></div>
+
+	<script src="lib/jquery/dist/jquery.js"></script>
+	<script src="js/extra/json2html.js"></script>
+	<script src="js/extra/jquery.json2html.js"></script>
+	<script src="js/results.mgt.js"></script>
+	<script type="text/javascript">
+		var lResMgr = new ResultsManager(
+				{
+					"lang" : "en",
+					"eventsService" : "http://localhost:8080/regataiades-service/results/events",
+					"resultsService" : "http://localhost:8080/regataiades-service/results/category/"
+				});
+
+		lResMgr.init();
+	</script>
+</body>
+</html>

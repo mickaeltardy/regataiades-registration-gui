@@ -1,0 +1,77 @@
+h1>span {
+	font-size: 160%;
+}
+
+h1>span.date {
+	color: #3D9FD0;
+}
+
+h2.live {
+	color: #F00;
+	border: thin #f00;
+}
+
+h1, h2 {
+	margin: 0px;
+	padding: 0px;
+	font-variant: small-caps;
+}
+
+div#control {
+	text-align: center;
+}
+
+div#control>button {
+	display: inline-block;
+}
+
+div#results {
+	display: table;
+	margin: 20px auto;
+}
+
+div#results>div.event {
+	/* display:table-row;*/
+	
+}
+
+div#results>div.event>div.field {
+	display: table-cell;
+	padding: 5px;
+}
+
+div#results>div.event>div.results>div.result:nth-child(even), div#results>div.no-result-event:nth-child(even)
+	{
+	background: #ddd;
+}
+
+div#results>div.event>div.time {
+	font-style: italic;
+}
+
+div#results>div.event>div.boat-category {
+	font-weight: bold;
+}
+
+div#results>div.event>div.status {
+	font-size: 80%;
+}
+
+div#results>div.event>div.results {
+	display: table;
+	margin: 20px auto;
+	margin-bottom: 40px;
+}
+
+div#results>div.event>div.results>div.result {
+	display: table-row;
+}
+
+div#results>div.event>div.results>div.header {
+	font-weight: bold;
+}
+
+div#results>div.event>div.results>div.result>div {
+	display: table-cell;
+	padding: 5px;
+}
