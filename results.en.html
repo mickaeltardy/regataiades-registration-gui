@@ -28,7 +28,7 @@
 		<h2 class="live">Live</h2>
 	</div>
 	<div id="control">
-		<div>Choose the category: </div>
+		<div>Choose the category to get the starting lists and results: </div>
 		<button class="btn btn-default results-button" type="submit" data-category="W4x">W4x</button>
 		<button class="btn btn-default results-button" type="submit" data-category="W8+">W8+</button>
 		<button class="btn btn-default results-button" type="submit" data-category="M4x">M4x</button>
@@ -46,8 +46,8 @@
 		var lResMgr = new ResultsManager(
 				{
 					"lang" : "en",
-					"eventsService" : "http://prototype.una-club.fr/regataiades-service/results/events/",
-					"resultsService" : "http://prototype.una-club.fr/regataiades-service/results/category/"
+					"eventsService" : "http://localhost:8080/regataiades-service/results/events/",
+					"resultsService" : "http://localhost:8080/regataiades-service/results/category/"
 				});
 
 		lResMgr.init();
