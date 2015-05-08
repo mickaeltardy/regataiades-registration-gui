@@ -82,6 +82,14 @@ var ResultsManager = function(pMetaData) {
 
 	var mgr = this;
 	var mSelectedCategory = null;
+	this.preloaderTrigger = function(pShow){
+		
+		if(pShow){
+			$("#preloaderContainer").show();
+		}else{
+			$("#preloaderContainer").hide();
+		}
+	}
 	this.init = function() {
 		
 		if (window.location.hash.indexOf("500m") >= 0)
@@ -108,7 +116,7 @@ var ResultsManager = function(pMetaData) {
 		mgr.updateButtonStyles(this);
 
 		var lCategory = $(this).attr("data-category")
-
+		mgr.preloaderTrigger(true);
 		var lQuery = ""
 		if (lCategory && lCategory != "") {
 			lQuery = lCategory;
@@ -120,7 +128,8 @@ var ResultsManager = function(pMetaData) {
 	}
 
 	this.getEvents = function() {
-
+		
+		mgr.preloaderTrigger(true);
 		$.ajax({
 			url : mMetaData.eventsService + mRaceType + "/",
 			success : mgr.processEvents
@@ -243,6 +252,7 @@ var ResultsManager = function(pMetaData) {
 		};
 		$('#results').html("")
 		$('#results').json2html(pData, lTransform);
+		mgr.preloaderTrigger(false);
 		return true;
 	}
 
@@ -318,6 +328,7 @@ var ResultsManager = function(pMetaData) {
 					} ]
 		};
 		$('#results').json2html(pData, lTransform);
+		mgr.preloaderTrigger(false);
 		return true;
 	}
 
