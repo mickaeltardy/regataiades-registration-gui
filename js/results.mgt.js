@@ -6,6 +6,8 @@ var ResultsManager = function(pMetaData) {
 
 	var mMetaData = pMetaData;
 
+	var mRaceType = "1000m";
+
 	var mLabels = {
 		"fr" : {
 			"categories" : {
@@ -35,6 +37,10 @@ var ResultsManager = function(pMetaData) {
 				"time" : "Temps",
 				"diff" : "Ecart",
 				"rank" : "Classt"
+			},
+			"title" : {
+				"1000m" : "Samedi : 1000m - La Jonelière",
+				"500m" : "Dimanche : 500m - La Motte Rouge",
 			}
 
 		},
@@ -66,6 +72,10 @@ var ResultsManager = function(pMetaData) {
 				"time" : "Time",
 				"diff" : "Diff",
 				"rank" : "Rank"
+			},
+			"title" : {
+				"1000m" : "Saturday : 1000m - La Jonelière",
+				"500m" : "Sunday : 500m - La Motte Rouge",
 			}
 		}
 	}
@@ -73,7 +83,14 @@ var ResultsManager = function(pMetaData) {
 	var mgr = this;
 	var mSelectedCategory = null;
 	this.init = function() {
+		
+		if (window.location.hash.indexOf("500m") >= 0)
+			mRaceType = "500m";
+		else if (window.location.hash.indexOf("1000m") >= 0)
+			mRaceType = "1000m";
+
 		$("[class*=results-button]").click(this.getResults);
+		$("h2[id=race]").html(this.translate("title", mRaceType));
 		this.getEvents();
 
 	}
@@ -97,7 +114,7 @@ var ResultsManager = function(pMetaData) {
 			lQuery = lCategory;
 		}
 		$.ajax({
-			url : mMetaData.resultsService + lQuery,
+			url : mMetaData.resultsService + mRaceType + "/" + lQuery,
 			success : mgr.processResults
 		});
 	}
@@ -105,7 +122,7 @@ var ResultsManager = function(pMetaData) {
 	this.getEvents = function() {
 
 		$.ajax({
-			url : mMetaData.eventsService,
+			url : mMetaData.eventsService + mRaceType + "/",
 			success : mgr.processEvents
 		});
 	}
