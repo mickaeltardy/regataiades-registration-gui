@@ -98,7 +98,8 @@ var ResultsManager = function(pMetaData) {
 			mRaceType = "1000m";
 
 		$("[class*=results-button]").click(this.getResults);
-		$("h2[id=race]").html(this.translate("title", mRaceType));
+		debugger;
+		$("#raceTitle").html(this.translate("title", mRaceType));
 		this.getEvents();
 
 	}
