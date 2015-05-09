@@ -14,7 +14,7 @@ var ResultsManager = function(pMetaData) {
 				"qualification" : "Tête de rivière",
 				"series" : "Série",
 				"semi" : "Demi",
-				"repechage" : "Repechage",
+				"repechage" : "Repéchage",
 				"final" : "Finale",
 				"boat" : "Interruption : Passage de bateau Nantais"
 			},
