@@ -6,13 +6,14 @@ var ResultsManager = function(pMetaData) {
 
 	var mMetaData = pMetaData;
 
-	var mRaceType = "1000m";
+	var mRaceType = "500m";
 
 	var mLabels = {
 		"fr" : {
 			"categories" : {
 				"qualification" : "Tête de rivière",
 				"series" : "Série",
+				"semi" : "Demi",
 				"repechage" : "Repechage",
 				"final" : "Finale",
 				"boat" : "Interruption : Passage de bateau Nantais"
@@ -49,6 +50,7 @@ var ResultsManager = function(pMetaData) {
 				"qualification" : "Qualification",
 				"series" : "Series",
 				"repechage" : "Repechage",
+				"semi" : "Semi",
 				"final" : "Finals",
 				"boat" : "Break : Nantes tourist ship passing"
 			},
@@ -82,16 +84,16 @@ var ResultsManager = function(pMetaData) {
 
 	var mgr = this;
 	var mSelectedCategory = null;
-	this.preloaderTrigger = function(pShow){
-		
-		if(pShow){
+	this.preloaderTrigger = function(pShow) {
+
+		if (pShow) {
 			$("#preloaderContainer").show();
-		}else{
+		} else {
 			$("#preloaderContainer").hide();
 		}
 	}
 	this.init = function() {
-		
+
 		if (window.location.hash.indexOf("500m") >= 0)
 			mRaceType = "500m";
 		else if (window.location.hash.indexOf("1000m") >= 0)
@@ -129,7 +131,7 @@ var ResultsManager = function(pMetaData) {
 	}
 
 	this.getEvents = function() {
-		
+
 		mgr.preloaderTrigger(true);
 		$.ajax({
 			url : mMetaData.eventsService + mRaceType + "/",
@@ -155,18 +157,29 @@ var ResultsManager = function(pMetaData) {
 				if (lEvtCat == "qualification") {
 
 				} else if (lEvtCat == "final") {
-					if (lStatuses[lBoatCat].series
-							&& lStatuses[lBoatCat].series != 3) {
+					if (lStatuses[lBoatCat].demi
+							&& lStatuses[lBoatCat].demi != 4) {
+						pInput[i].results = new Array();
+					} else if (lStatuses[lBoatCat].repechage
+							&& lStatuses[lBoatCat].repechage != 4) {
+						pInput[i].results = new Array();
+					} else if (lStatuses[lBoatCat].series
+							&& lStatuses[lBoatCat].series != 4) {
 						pInput[i].results = new Array();
 					}
 				} else if (lEvtCat == "repechage") {
-					if (lStatuses[lBoatCat].qualification
-							&& lStatuses[lBoatCat].qualification != 3) {
+					if (lStatuses[lBoatCat].series
+							&& lStatuses[lBoatCat].series != 4) {
+						pInput[i].results = new Array();
+					}
+				} else if (lEvtCat == "semi") {
+					if (lStatuses[lBoatCat].series
+							&& lStatuses[lBoatCat].series != 4) {
 						pInput[i].results = new Array();
 					}
 				} else if (lEvtCat == "series") {
 					if (lStatuses[lBoatCat].qualification
-							&& lStatuses[lBoatCat].qualification != 3) {
+							&& lStatuses[lBoatCat].qualification != 4) {
 						pInput[i].results = new Array();
 					}
 				}
