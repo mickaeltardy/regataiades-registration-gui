@@ -13,7 +13,7 @@ var ResultsManager = function(pMetaData) {
 			"categories" : {
 				"qualification" : "Tête de rivière",
 				"series" : "Série",
-				"semi" : "Demi",
+				"demi" : "Demi",
 				"repechage" : "Repéchage",
 				"final" : "Finale",
 				"boat" : "Interruption : Passage de bateau Nantais"
@@ -50,7 +50,7 @@ var ResultsManager = function(pMetaData) {
 				"qualification" : "Qualification",
 				"series" : "Series",
 				"repechage" : "Repechage",
-				"semi" : "Semi",
+				"demi" : "Semi",
 				"final" : "Finals",
 				"boat" : "Break : Nantes tourist ship passing"
 			},
@@ -157,15 +157,16 @@ var ResultsManager = function(pMetaData) {
 				if (lEvtCat == "qualification") {
 
 				} else if (lEvtCat == "final") {
-					if (lStatuses[lBoatCat].demi
-							&& lStatuses[lBoatCat].demi != 4) {
-						pInput[i].results = new Array();
-					} else if (lStatuses[lBoatCat].repechage
-							&& lStatuses[lBoatCat].repechage != 4) {
-						pInput[i].results = new Array();
-					} else if (lStatuses[lBoatCat].series
-							&& lStatuses[lBoatCat].series != 4) {
-						pInput[i].results = new Array();
+					if (lStatuses[lBoatCat].demi) {
+						if (lStatuses[lBoatCat].demi != 4)
+							pInput[i].results = new Array();
+					} else if (lStatuses[lBoatCat].repechage) {
+
+						if (lStatuses[lBoatCat].repechage != 4)
+							pInput[i].results = new Array();
+					} else if (lStatuses[lBoatCat].series) {
+						if (lStatuses[lBoatCat].series != 4)
+							pInput[i].results = new Array();
 					}
 				} else if (lEvtCat == "repechage") {
 					if (lStatuses[lBoatCat].series
