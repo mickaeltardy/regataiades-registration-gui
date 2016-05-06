@@ -6,7 +6,7 @@ var ResultsManager = function(pMetaData) {
 
 	var mMetaData = pMetaData;
 
-	var mRaceType = "500m";
+	var mRaceType = "1000m";
 
 	var mLabels = {
 		"fr" : {
@@ -265,7 +265,7 @@ var ResultsManager = function(pMetaData) {
 						}
 					} ]
 		};
-		$('#results').html("")
+		$('#results').html("");
 		$('#results').json2html(pData, lTransform);
 		mgr.preloaderTrigger(false);
 		return true;
