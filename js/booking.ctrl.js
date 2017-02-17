@@ -3,7 +3,7 @@ var BookingCtrl = function($scope, $http, $sanitize, $sce) {
 	GenericCtrl.apply(this, arguments);
 	var app = this;
 
-	this.unityPrice = 8;
+	this.unityPrice = 10;
 
 	this.checkOutData = function() {
 		var lToken = localStorage.getItem("auth_token");
