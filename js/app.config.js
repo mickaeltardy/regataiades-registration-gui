@@ -1,6 +1,6 @@
 var config = {
 	"messagesSrv" : "/shared/data/",
 	"serverUrl" : "/",
-	"applicationUrl" : "http://localhost:8080/regataiades-service/",
+	"applicationUrl" : "http://regataiades.fr/regataiades-service/",
 	"lang" : "fr"
 }
