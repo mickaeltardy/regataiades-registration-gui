@@ -1,4 +1,4 @@
-{   
+{
     "title" : "Pre-registration form",
     "labels" : {
         "clubName" : "Team Name",
@@ -31,13 +31,13 @@
         "delete" : "Delete",
         "category" : "Category",
         "crewCaptain" : "Crew Captain",
-        "place" : "Pos.", 
-        "name" : "Name", 
+        "place" : "Pos.",
+        "name" : "Name",
         "surname" : "Surname",
-        "sex" : "Sex", 
+        "sex" : "Sex",
         "licenceNo" : "Licence No",
         "tshirtSize" : "T-shirt size",
-        
+
         "runs" : "Runs",
         "runsBothDays" : "Saturday and Sunday",
         "runsOnlySaturday" : "Only Saturday",
@@ -46,13 +46,13 @@
         "boatRequired" : "Required",
         "canBeLoaned" : "Can be loaned",
         "previousStep" : "Previous step",
-        "nextStep" : "Next step", 
-        "requiredFields" : "Required fields", 
+        "nextStep" : "Next step",
+        "requiredFields" : "Required fields",
         "sexes" : {"f" : "F", "m" : "M"},
         "places" : {"9" :  [ "Bow", "2", "3", "4", "5", "6", "7", "Stroke", "Cox" ], "4" : ["Bow", "2", "3", "Stroke"]},
-        "transport" : ["car", "bus", "train", "plane"], 
+        "transport" : ["car", "bus", "train", "plane"],
         "mainpage" : "Go back to main"
-        
+
     },
     "values" : {
         "addCrew" : "Add a crew",
@@ -79,7 +79,7 @@
     },
     "errors" : {
         "invalidForm" : "The form is not filled in correctly. Please check it out and then submit again.",
-        "teamCreationFalure" : "Registration error has occured", 
+        "teamCreationFalure" : "Registration error has occured",
 		"userCreationFalure" : "Unable to create user account",
 		"userAlreadyExists" : "A user with such email already exists"
     },
@@ -94,11 +94,11 @@
         "subtitle" : "31th edition: 09 & 10 May 2015",
         "details" : "After checking the information in this document, please contact us for the finalisation of your registration.",
         "signature" : "Signature",
-        "date" : "Date" 
-    }, 
+        "date" : "Date"
+    },
     "mail" : {
         "registration" : {"title" : "[Regataiades] Online pre-registration form successfully submitted"}
-    }, 
+    },
     "info" : {
     	"formDetails" : "The pre-registration form allows the registration of your team on the Régataïades event. The provided email and password will allow you to update your registration details as well as book meals for the event's weekend",
     	"coachesDetails" : "You can specify the coaches and staff being part of the team. This remains optional.",
@@ -113,7 +113,7 @@
 			"bookingFailure" : "Unfortunately the meals booking hasn't been completed."
 		},
 		"labels" : {
-			"quantity" : "Quantity", 
+			"quantity" : "Quantity",
 			"submit" : "Book for "
 		},
 		"saturdayNoon" : {
@@ -133,7 +133,7 @@
 				}
 		},
 		"sundayNoon" : {
-			"label" : "Dimanche midi",
+			"label" : "Sunday noon",
 			"menu" : {
 				"meal" : "Sagar chicken with rice",
 				"dessert": "Chocolate mousse",
@@ -141,5 +141,5 @@
 				}
 		}
 	}
-    
+
 }
