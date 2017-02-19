@@ -106,9 +106,11 @@ var RegistrationCtrl = function($scope, $http) {
 		switch (pCategory) {
 		case "W8+":
 		case "W4x":
+		case "MW4x":
 			return 'F';
 		case "M8+":
 		case "M4x":
+		case "MM4x":
 			return 'M';
 		}
 
