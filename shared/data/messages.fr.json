@@ -1,6 +1,6 @@
     {
     "title" : "Formulaire de pré-inscription",
-    "labels" : { 
+    "labels" : {
         "clubName" : "Nom du club",
         "clubAddress" : "Adresse",
         "clubCountry" : "Pays",
@@ -33,10 +33,10 @@
         "delete" : "Supprimer",
         "category" : "Catégorie",
         "crewCaptain" : "Capitaine",
-        "place" : "Empl.", 
-        "name" : "Prénom", 
+        "place" : "Empl.",
+        "name" : "Prénom",
         "surname" : "Nom",
-        "sex" : "Sexe", 
+        "sex" : "Sexe",
         "licenceNo" : "Numéro de licence",
         "tshirtSize" : "Taille T-shirt",
         "runs" : "Court",
@@ -57,9 +57,9 @@
         "places" : {"9" :  [ "8", "7", "6", "5", "4", "3", "2", "1", "Barreur" ], "4" : ["4", "3", "2", "1"]},
         "transport" : ["voiture", "bus", "train", "avion"],
         "mainpage" : "Retour vers le site"
-    
-    }, 
-    "values" : { 
+
+    },
+    "values" : {
         "addCrew" : "Ajouter un équipage",
         "addCoach" : "Ajouter un accompagnateur",
         "submit" : "Envoyer",
@@ -67,17 +67,17 @@
         "partyOne" : "Seul",
         "partyTwo" : "Accompagné"
     },
-    
+
     "alerts" : {
         "pleaseFillIn" : "Veuillez remplir les champs requis",
         "invalidValues" : "Certaines valeurs ne sont pas valides"
     },
-    
+
     "messages" : {
     	"switchLanguage" : "Change the language:",
         "needToSpecifyACrew" : "Au moins un équipage doit être inscrit",
         "willNeedToSpecifyAthletesDetails" : "N'oubliez pas de fournir toutes les informations sur les athletes avant J-0",
-        "requiredFieldsInvalid" : "Certains champs obligatoires  ne sont pas correctement renseignés", 
+        "requiredFieldsInvalid" : "Certains champs obligatoires  ne sont pas correctement renseignés",
         "needToSpecifyACaptain" : "Un capitaine d'équipage doit être indiqué",
         "warningMembersCnt" : "Attention : certains rameurs apparaissent dans plusieurs équipages. Cela n'est pas autorisé par la réglementation.",
         "formValidated" : "Le formulaire est validé avec succès. Veuillez vérifiez votre boîte mail pour plus d'instructions.",
@@ -86,7 +86,7 @@
     },
     "errors" : {
             "invalidForm" : "Le formulaire n'est pas correctement rempli",
-            "teamCreationFalure" : "Une erreur d'inscription s'est produite", 
+            "teamCreationFalure" : "Une erreur d'inscription s'est produite",
 			"userCreationFalure" : "Impossible de créer un compte utilisateur",
 			"userAlreadyExists" : "Un utilisateur avec un tel email existe déjà"
     },
@@ -94,23 +94,26 @@
         "W4x" : {"label" : "FU4x", "key" : "W4x"},
         "M4x" : {"label" : "HU4x", "key" : "M4x"},
         "W8+" : {"label" : "FU8+", "key" : "W8+"},
-        "M8+" : {"label" : "HU8+", "key" : "M8+"}
+        "M8+" : {"label" : "HU8+", "key" : "M8+"},
+        "---" : {"label" : "---", "key" : "---"},
+        "MW4x" : {"label" : "MD4x", "key" : "MW4x"},
+        "MM4x" : {"label" : "MM4x", "key" : "MM4x"}
     },
     "pdf" : {
         "title" : "Régataiades Internationales de Nantes 2015",
         "subtitle" : "31th edition: 09 & 10 mai 2015",
         "details" : "Le document présent doit être dûrement signé et envoyé à l'Université Nantes Aviron accompagné d'un réglement par chéque à l'ordre de\"Université Nantes Aviron\". Veuillez noter que tout réglement après le 1 avril doit être effectué au montant correspondant au tarif plein.",
         "signature" : "Signature",
-        "date" : "Date" 
-    }, 
+        "date" : "Date"
+    },
     "mail" : {
         "registration" : {"title" : "[Regataiades] Formulaire de préinscription rempli"}
-    }, 
+    },
     "info" : {
     	"formDetails" : "Le formulaire de pré-inscription vous permet d'inscrire votre délégation aux Régataïades. Avec l'adresse mail et le mot de passe saisis vous allez pouvoir mettre à jour votre dossier d'inscription ainsi que reserver les repas pour le week-end de l'événement.",
     	"coachesDetails" : "Vous pouvez indiquer les entraineurs et les accompagnateurs qui font partie de la délégation. Ceci n'est pas obligatoire.",
     	"crewsDetails" : "Vous n'êtes pas obligés de renseigner toutes les informations sur les rameurs pour inscrire un équipage, mais elles devront être fournies avant le jour de l'évenement.",
-    	"commentDetails" : "Vous pouvez y mentionner toute information ou question conernant votre participation (ex. prêt de bateaux, jour et l'heure d'arrivée etc.)" 
+    	"commentDetails" : "Vous pouvez y mentionner toute information ou question conernant votre participation (ex. prêt de bateaux, jour et l'heure d'arrivée etc.)"
 	},
 	"meals" : {
 		"title" : "Reservation des repas",
@@ -120,7 +123,7 @@
 			"bookingFailure" : "La reservation des repas n'a pas pu être finalisée"
 		},
 		"labels" : {
-			"quantity" : "Quantité", 
+			"quantity" : "Quantité",
 			"submit" : "Reserver pour"
 		},
 		"saturdayNoon" : {
@@ -148,5 +151,5 @@
 				}
 		}
 	}
-	
+
 }
