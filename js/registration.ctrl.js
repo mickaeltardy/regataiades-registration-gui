@@ -327,7 +327,7 @@ var RegistrationCtrl = function($scope, $http) {
 		this.registration = new Object();
 		this.registration.team = new Object();
 
-		this.boats = [ "W4x", "M4x", "W8+", "M8+" ];
+		this.boats = [ "W4x", "M4x", "W8+", "M8+", "---", "MW4x", "MM4x" ];
 
 		this.checkOutData();
 
