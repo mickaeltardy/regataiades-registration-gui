@@ -40,6 +40,7 @@
 								<th>{{regCtrl.messages.labels.surname}}</th>
 								<th>{{regCtrl.messages.labels.licenceNo}}</th>
 								<th>{{regCtrl.messages.labels.sex}}</th>
+								<th>{{regCtrl.messages.labels.birthdate}}</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -61,6 +62,8 @@
 									data-ng-model="member.sex" type="radio" data-ng-value="'F'" />
 									<label for="crew_{{crew.id}}_member_{{$index+1}}_sex_f">{{regCtrl.messages.labels.sexes.f}}</label>
 								</td>
+								<td><input type="text" data-ng-model="member.birthdate"
+									placeholder="{{regCtrl.messages.labels.birthdatePlaceholder}}" /></td>
 							</tr>
 						</tbody>
 					</table>
