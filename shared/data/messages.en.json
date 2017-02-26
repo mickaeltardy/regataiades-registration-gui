@@ -36,6 +36,8 @@
         "surname" : "Surname",
         "sex" : "Sex",
         "licenceNo" : "Licence No",
+        "birthdate" : "Birthdate",
+        "birthdatePlaceholder" : "DD/MM/YYYY",
         "tshirtSize" : "T-shirt size",
 
         "runs" : "Runs",
