@@ -51,7 +51,7 @@
         "nextStep" : "Next step",
         "requiredFields" : "Required fields",
         "sexes" : {"f" : "F", "m" : "M"},
-        "places" : {"9" :  [ "Bow", "2", "3", "4", "5", "6", "7", "Stroke", "Coxswain" ], "4" : ["Bow", "2", "3", "Stroke"], "5" : ["Bow", "3", "2", "Stroke"; "Coxswain"]},
+        "places" : {"9" :  [ "Bow", "2", "3", "4", "5", "6", "7", "Stroke", "Coxswain" ], "4" : ["Bow", "2", "3", "Stroke"], "5" : ["Bow", "3", "2", "Stroke", "Coxswain" ]},
         "transport" : ["car", "bus", "train", "plane"],
         "mainpage" : "Go back to main"
 
