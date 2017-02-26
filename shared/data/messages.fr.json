@@ -38,6 +38,8 @@
         "surname" : "Nom",
         "sex" : "Sexe",
         "licenceNo" : "Numéro de licence",
+        "birthdate" : "Date de naissance",
+        "birthdatePlaceholder" : "JJ/MM/AAAA",
         "tshirtSize" : "Taille T-shirt",
         "runs" : "Court",
         "runsBothDays" : "Samedi et dimanche",
