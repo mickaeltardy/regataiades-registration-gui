@@ -93,8 +93,9 @@ var RegistrationCtrl = function($scope, $http) {
 		case "M4x":
 		case "W4x":
 		case "MW4x":
-		case "MM4x":
 			return 4;
+		case "MM4+":
+			return 5;
 		case "M8+":
 		case "W8+":
 			return 9;
@@ -110,7 +111,7 @@ var RegistrationCtrl = function($scope, $http) {
 			return 'F';
 		case "M8+":
 		case "M4x":
-		case "MM4x":
+		case "MM4+":
 			return 'M';
 		}
 
@@ -331,7 +332,7 @@ var RegistrationCtrl = function($scope, $http) {
 		this.registration = new Object();
 		this.registration.team = new Object();
 
-		this.boats = [ "W4x", "M4x", "W8+", "M8+", "---", "MW4x", "MM4x" ];
+		this.boats = [ "W4x", "M4x", "W8+", "M8+", "---", "MW4x", "MM4+" ];
 
 		this.checkOutData();
 
