@@ -56,7 +56,7 @@
         "nextStep" : "Etape suivante",
         "requiredFields" : "Champs requis",
         "sexes" : {"f" : "F", "m" : "H"},
-        "places" : {"9" :  [ "8", "7", "6", "5", "4", "3", "2", "1", "Barreur" ], "4" : ["4", "3", "2", "1"]},
+        "places" : {"9" :  [ "8", "7", "6", "5", "4", "3", "2", "1", "Barreur" ], "4" : ["4", "3", "2", "1"], "5" : ["4", "3", "2", "1"; "Barreur"]},
         "transport" : ["voiture", "bus", "train", "avion"],
         "mainpage" : "Retour vers le site"
 
