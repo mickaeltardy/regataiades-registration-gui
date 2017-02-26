@@ -99,7 +99,7 @@
         "M8+" : {"label" : "HU8+", "key" : "M8+"},
         "---" : {"label" : "---", "key" : "---"},
         "MW4x" : {"label" : "MD4x", "key" : "MW4x"},
-        "MM4x" : {"label" : "MM4x", "key" : "MM4x"}
+        "MM4+" : {"label" : "MM4+", "key" : "MM4+"}
     },
     "pdf" : {
         "title" : "Régataiades Internationales de Nantes 2015",
