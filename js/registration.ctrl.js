@@ -135,11 +135,27 @@ var RegistrationCtrl = function($scope, $http) {
 		return lMembersCnt;
 	};
 
+	this.getPayingAthletesCount = function() {
+		var lCrews = this.registration.team.crews;
+
+		var lMembersCnt = 0;
+
+		if (lCrews && lCrews.length > 0) {
+			for (var i = 0; i < lCrews.length; i++) {
+				if (!lCrews[i].category) {
+					continue;
+				}
+				lMembersCnt += (lCrews[i].athletes.length % 2 == 0 ) ? lCrews[i].athletes.length : lCrews[i].athletes.length - 1;
+
+			}
+		}
+		return lMembersCnt;
+	};
+
 	this.getTotalPrice = function() {
 		var lAthletesCnt = 0;
 		if (this.registration.team && this.registration.team.crews) {
-			lAthletesCnt = this.getAthletesCount();
-
+			lAthletesCnt = this.getPayingAthletesCount();
 		}
 
 		var lMembersPrice = (this.getCurrentPrice() * (lAthletesCnt));
