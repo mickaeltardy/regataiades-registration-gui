@@ -45,7 +45,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr data-ng-repeat="member in crew.athletes" class="memberItem">
+							<tr data-ng-repeat="member in crew.athletes | orderBy: 'id'" class="memberItem">
 
 								<td>{{regCtrl.getPlaceLabel(crew, $index)}}<input
 									type="hidden" data-ng-model="member.id" /></td>
