@@ -299,7 +299,7 @@ var RegistrationCtrl = function($scope, $http) {
 
 		}
 
-		app.registration.team.athletesNum = this.getAthletesCount();
+		app.registration.team.athletesNum = this.getPayingAthletesCount();
 
 		app.loading = true;
 		lSubmitService = (this.updateMode) ? "registration/update"
