@@ -1,12 +1,12 @@
 /**
- * 
+ *
  */
 
 var ResultsManager = function(pMetaData) {
 
 	var mMetaData = pMetaData;
 
-	var mRaceType = "500m";
+	var mRaceType = "1000m";
 
 	var mLabels = {
 		"fr" : {
