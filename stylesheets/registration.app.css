@@ -1,0 +1,287 @@
+@import url(//fonts.googleapis.com/css?family=Lato:700);
+/* line 7, ../sass/registration.app.scss */
+body {
+  font-family: "Lucida Grande", Helvetica, Verdana, sans-serif;
+}
+
+/* line 11, ../sass/registration.app.scss */
+div.welcome, div.registrator {
+  width: 90%;
+  margin: 0px auto 20px;
+}
+
+/* line 16, ../sass/registration.app.scss */
+div.welcome {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: #999999 thin solid;
+}
+
+/* line 21, ../sass/registration.app.scss */
+h1, h2 {
+  font-family: 'Lato', sans-serif;
+}
+
+/* line 24, ../sass/registration.app.scss */
+h1 {
+  font-size: 120%;
+  margin: 16px 0 0 0;
+  color: #000;
+}
+
+/* line 30, ../sass/registration.app.scss */
+h2 {
+  color: #189FDB;
+}
+
+/* line 38, ../sass/registration.app.scss */
+legend {
+  display: block;
+  width: auto;
+  margin-bottom: none;
+  font-size: 100%;
+  color: #000000;
+  border: none;
+}
+
+/* line 47, ../sass/registration.app.scss */
+input[type=submit] {
+  margin: 0px auto;
+}
+
+/* line 51, ../sass/registration.app.scss */
+.button {
+  border: #999999 thin solid;
+  background: #eeeeee;
+  margin: 5px;
+  padding: 5px;
+  display: block;
+  width: auto;
+  float: left;
+  clear: both;
+}
+
+/* line 62, ../sass/registration.app.scss */
+input[type=submit] {
+  font-weight: bold;
+  font-size: 120%;
+  float: none;
+}
+
+/* line 68, ../sass/registration.app.scss */
+ol {
+  clear: both;
+}
+
+/* line 72, ../sass/registration.app.scss */
+ol li {
+  margin-top: 10px;
+}
+
+/* line 76, ../sass/registration.app.scss */
+#total_price {
+  border: 0px;
+  font-weight: bold;
+}
+
+/* line 81, ../sass/registration.app.scss */
+.title, #registrationForm {
+  font-family: "Lucida Grande", Helvetica, Verdana, sans-serif;
+}
+
+/* line 85, ../sass/registration.app.scss */
+.title {
+  font-size: 230%;
+  color: #3D9FD0;
+}
+
+/* line 90, ../sass/registration.app.scss */
+.title span {
+  color: #000000;
+}
+
+/* line 94, ../sass/registration.app.scss */
+fieldset {
+  padding: 10px;
+  margin: 10px;
+  border: #999999 thin solid;
+  clear: both;
+}
+
+/* line 101, ../sass/registration.app.scss */
+.item-page {
+  display: none;
+}
+
+/* line 105, ../sass/registration.app.scss */
+div.language {
+  margin: 5px;
+  padding: 5px;
+  background: #999999;
+  color: #000000;
+  float: left;
+  display: inline;
+  font-weight: bold;
+}
+
+/* line 115, ../sass/registration.app.scss */
+div.language.selected {
+  background: #3D9FD0;
+}
+
+/* line 119, ../sass/registration.app.scss */
+div.form, div.selectLanguage {
+  clear: both;
+  width: 100%;
+  display: block;
+  float: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: auto;
+}
+
+/* line 130, ../sass/registration.app.scss */
+input[type=text], input[type=date], input[type=email], input[type=password],
+textarea {
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  border: 0px;
+  border-bottom: #999999 thin solid;
+  padding: 5px;
+  font-size: 100%;
+  font-style: italic;
+}
+
+/* line 143, ../sass/registration.app.scss */
+input.ng-invalid.ng-dirty[required], input.ng-invalid.ng-touched[required] {
+  border-color: #ff4000;
+  background: rgba(246, 216, 206, 0.2);
+}
+
+/* line 147, ../sass/registration.app.scss */
+input.ng-valid.ng-dirty[required] {
+  border-color: #3adf00;
+  background: none;
+}
+
+/* line 151, ../sass/registration.app.scss */
+div.dropboxContainer {
+  padding: 0;
+  margin: 0px 10px;
+  border: 1px solid #ccc;
+  width: 120px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #fff;
+  display: inline;
+  float: left;
+  background: white url("../shared/img/arrowdown.gif") no-repeat 90% 50%;
+}
+
+/* line 164, ../sass/registration.app.scss */
+div.dropboxContainer select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 176, ../sass/registration.app.scss */
+div.dropboxContainer select:focus {
+  outline: none;
+}
+
+/* line 180, ../sass/registration.app.scss */
+table tr td, table tr th {
+  padding: 5px;
+}
+
+/* line 184, ../sass/registration.app.scss */
+div.coachCreator, div.crewCreator {
+  overflow: auto;
+  clear: both;
+  padding-top: 5px;
+}
+
+/* line 190, ../sass/registration.app.scss */
+div.coachCreator div, div.crewCreator div {
+  float: left;
+}
+
+/* line 195, ../sass/registration.app.scss */
+div.crewCreator div.crewLabel, div.coachCreator div.coachLabel, div.crewCreator div.catLabel {
+  margin: 5px;
+  font-size: 105%;
+  font-weight: bold;
+}
+
+/* line 201, ../sass/registration.app.scss */
+ul.notifications > li {
+  padding: 10px;
+  margin: 10px;
+}
+
+/* line 206, ../sass/registration.app.scss */
+ul.notifications > li.warning {
+  background: rgba(255, 144, 0, 0.1);
+}
+
+/* line 211, ../sass/registration.app.scss */
+ul.notifications > li.error {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+/* line 216, ../sass/registration.app.scss */
+ul.notifications > li.info {
+  background: rgba(91, 192, 222, 0.1);
+}
+
+/* line 220, ../sass/registration.app.scss */
+div.info {
+  color: #999999;
+  padding: 10px;
+  margin: 10px;
+  border-left: thin solid #999999;
+}
+
+/* line 227, ../sass/registration.app.scss */
+label.required:after {
+  content: "*";
+  color: #ff0000;
+}
+
+/* line 233, ../sass/registration.app.scss */
+#preloaderContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 100;
+  top: 0px;
+  left: 0px;
+}
+
+/* line 243, ../sass/registration.app.scss */
+#preloader {
+  position: relative;
+  top: 30%;
+  width: 100%;
+}
+
+/* line 250, ../sass/registration.app.scss */
+#preloader > img {
+  margin: 0px auto;
+  display: block;
+}
+
+/* line 254, ../sass/registration.app.scss */
+.regForm {
+  margin: 10px 0px 10px 0px;
+}

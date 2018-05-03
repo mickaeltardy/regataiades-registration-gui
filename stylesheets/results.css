@@ -1,0 +1,97 @@
+/* line 1, ../sass/results.scss */
+h1 > span {
+  font-size: 160%;
+}
+
+/* line 5, ../sass/results.scss */
+h1 > span.date {
+  color: #3D9FD0;
+}
+
+/* line 9, ../sass/results.scss */
+h2.live {
+  color: #F00;
+  border: thin #f00;
+}
+
+/* line 14, ../sass/results.scss */
+h1, h2 {
+  margin: 0px;
+  padding: 0px;
+  font-variant: small-caps;
+}
+
+/* line 20, ../sass/results.scss */
+div#control {
+  text-align: center;
+}
+
+/* line 24, ../sass/results.scss */
+div#control > button {
+  display: inline-block;
+}
+
+/* line 28, ../sass/results.scss */
+div#results {
+  display: table;
+  margin: 20px auto;
+}
+
+/* line 33, ../sass/results.scss */
+div#results > div.event {
+  /* display:table-row;*/
+}
+
+/* line 38, ../sass/results.scss */
+div#results > div.event > div.field {
+  display: table-cell;
+  padding: 5px;
+}
+
+/* line 44, ../sass/results.scss */
+div#results > div.event > div.results > div.result:nth-child(even), div#results > div.no-result-event:nth-child(even) {
+  background: #ddd;
+}
+
+/* line 48, ../sass/results.scss */
+div#results > div.event > div.time {
+  font-style: italic;
+}
+
+/* line 52, ../sass/results.scss */
+div#results > div.event > div.boat-category {
+  font-weight: bold;
+}
+
+/* line 56, ../sass/results.scss */
+div#results > div.event > div.status {
+  font-size: 80%;
+}
+
+/* line 60, ../sass/results.scss */
+div#results > div.event > div.results {
+  display: table;
+  margin: 20px auto;
+  margin-bottom: 40px;
+}
+
+/* line 66, ../sass/results.scss */
+div#results > div.event > div.results > div.result {
+  display: table-row;
+}
+
+/* line 70, ../sass/results.scss */
+div#results > div.event > div.results > div.header {
+  font-weight: bold;
+}
+
+/* line 74, ../sass/results.scss */
+div#results > div.event > div.results > div.result > div {
+  display: table-cell;
+  padding: 5px;
+}
+
+/* line 79, ../sass/results.scss */
+#preloaderContainer {
+  display: none;
+}

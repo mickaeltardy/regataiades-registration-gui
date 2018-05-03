@@ -1,0 +1,71 @@
+@import url(//fonts.googleapis.com/css?family=Lato:700);
+/* line 7, ../sass/booking.app.scss */
+#slider-container .slider .slide img {
+  width: 100%;
+}
+
+/* line 11, ../sass/booking.app.scss */
+#slider-container {
+  width: 100%;
+  opacity: 0.4;
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+/* line 21, ../sass/booking.app.scss */
+#form-container {
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+}
+
+/* line 27, ../sass/booking.app.scss */
+input[type=number] {
+  border: #999999 thin solid;
+  width: 100%;
+  padding: 5px;
+}
+
+/* line 32, ../sass/booking.app.scss */
+#form-container .row h3 {
+  margin-top: 10px;
+}
+
+/* line 35, ../sass/booking.app.scss */
+#form-container .row h4.price {
+  position: absolute;
+  top: 18px;
+  right: 30px;
+}
+
+/* line 40, ../sass/booking.app.scss */
+#form-container .row ul {
+  margin: 30px;
+}
+
+/* line 43, ../sass/booking.app.scss */
+#form-container .row ul > li {
+  list-style: disc;
+}
+
+/* line 47, ../sass/booking.app.scss */
+.bookForm {
+  margin: 10px 0px 10px 0px;
+}
+
+/* line 52, ../sass/booking.app.scss */
+ul.notifications > li.warning {
+  background: rgba(255, 144, 0, 0.7);
+}
+
+/* line 57, ../sass/booking.app.scss */
+ul.notifications > li.error {
+  background: rgba(255, 0, 0, 0.7);
+}
+
+/* line 62, ../sass/booking.app.scss */
+ul.notifications > li.info {
+  background: rgba(91, 192, 222, 0.7);
+}
